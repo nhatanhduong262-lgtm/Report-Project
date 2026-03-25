@@ -1,0 +1,87 @@
+/* --- 1. THIẾT LẬP CƠ BẢN (RESET & GLOBAL) --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; text-transform: uppercase; }
+body { background: #fff; color: #000; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+
+/* HEADER */
+.badhabits-header { display: flex; background: #000; color: #fff; height: 60px; position: sticky; top: 0; z-index: 1000; align-items: stretch; border-bottom: 1px solid #333; }
+.header-item { display: flex; align-items: center; padding: 0 30px; border-right: 1px solid #333; font-size: 11px; font-weight: 700; transition: background 0.3s ease; cursor: pointer; }
+.header-item:hover { background: #111; }
+.text-logo { font-size: 18px; font-weight: 900; letter-spacing: -1.5px; }
+.main-nav { flex-grow: 1; gap: 25px; justify-content: center; }
+.search-nav-btn { font-size: 14px !important; margin-left: 10px; display: flex; align-items: center; }
+.main-nav a, .user-actions a { color: #fff; text-decoration: none; font-size: 10px; transition: 0.3s; }
+.main-nav a:hover, .user-actions a:hover { color: #8C2F2F; }
+.vertical-divider { width: 1px; background: #333; }
+.user-actions { border-right: none; gap: 15px; }
+
+/* --- 4. DANH SÁCH SẢN PHẨM (PRODUCT GRID) --- */
+.product-collection { padding: 60px 0; }
+.collection-header-full-width { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+.sectionindex1hed { display: flex; align-items: center; gap: 8px; font-size: 24px; font-weight: 900; }
+.sectionindex1content { font-size: 12px; color: #999; margin-top: 5px; }
+
+.product-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+.newloopitem { position: relative; display: flex; flex-direction: column; }
+.image-container { position: relative; background: #f5f5f5; overflow: hidden; padding-top: 125%; }
+.pdSale { position: absolute; top: 10px; right: 10px; font-size: 8px; color: #999; z-index: 5; }
+
+/* --- HIỆU ỨNG KHI RÊ CHUỘT VÀO SẢN PHẨM --- */
+.imageclass img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.image2 { opacity: 0; }
+.newloopitem:hover .image1 { opacity: 0; }
+.newloopitem:hover .image2 { opacity: 1; }
+
+.product_title { font-size: 11px; font-weight: 900; margin-top: 10px; }
+.product_price { font-size: 12px; margin-top: 5px; color: #333; }
+
+/* --- PHẦN CHỌN SIZE VÀ NÚT THÊM VÀO GIỎ --- */
+.freebutton { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px; padding-top: 10px; border-top: 1px solid #f0f0f0; }
+.opt-title { font-size: 8px; color: #aaa; margin-bottom: 5px; }
+.size-list { display: flex; gap: 5px; }
+.size-item { font-size: 9px; border: 1px solid #eee; padding: 2px 5px; cursor: pointer; color: #333; }
+.size-item:hover { background: #000; color: #fff; }
+.buttoncart { background: none; border: none; cursor: pointer; font-size: 14px; padding: 5px; }
+.buttoncart:hover { color: #8C2F2F; }
+
+/* --- 5. ĐIỀU CHỈNH GIAO DIỆN TRÊN MOBILE/TABLET --- */
+@media (max-width: 1024px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .main-nav { display: none; } }
+
+/* --- 6. PHẦN TIÊU ĐỀ TRANG CON --- */
+.page-header { padding: 40px 0 20px; border-bottom: 2px solid #000; margin-bottom: 20px; }
+.breadcrumb { font-size: 10px; color: #888; margin-bottom: 10px; }
+.page-title { font-size: 40px; font-weight: 900; }
+
+/* --- 7. THANH BỘ LỌC (FILTER BAR) --- */
+.filter-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+.filter-group { display: flex; gap: 20px; align-items: center; font-size: 12px; font-weight: 700; }
+.filter-bar select { border: 1px solid #eee; padding: 5px 10px; font-size: 11px; text-transform: uppercase; outline: none; cursor: pointer; }
+.filter-bar select:hover { border-color: #000; }
+
+/* --- ĐÁNH DẤU TRANG ĐANG XEM --- */
+.main-nav a.active { color: #8C2F2F; border-bottom: 1px solid #8C2F2F; }
+
+/* --- PAGINATION --- */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 50px auto 20px; font-weight: 700; font-size: 14px; }
+.page-link { text-decoration: none; color: #000; padding: 8px 15px; border-bottom: 2px solid transparent; transition: 0.3s ease; }
+.page-link:hover { border-bottom: 2px solid #000; }
+.page-link.active { border-bottom: 2px solid #8C2F2F; color: #8C2F2F; }
+.page-dots { padding: 8px 15px; }
+.next-link { font-weight: 900; }
+
+/* --- FOOTER --- */
+.site-footer { background: #000; color: #fff; padding: 60px 0 20px; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 40px; }
+.footer-col h3 { font-size: 14px; font-weight: 900; margin-bottom: 20px; color: #8C2F2F; }
+.footer-col p, .footer-col a { display: block; font-size: 11px; color: #aaa; text-decoration: none; margin-bottom: 12px; transition: 0.3s ease; }
+.footer-col a:hover { color: #fff; padding-left: 5px; }
+.social-links { display: flex; gap: 15px; font-size: 20px; }
+.newsletter-form { display: flex; gap: 0; }
+.newsletter-form input { flex: 1; padding: 12px; font-size: 11px; border: 1px solid #333; background: #111; color: #fff; outline: none; }
+.newsletter-form button { padding: 12px 20px; background: #8C2F2F; color: #fff; border: none; font-weight: 900; cursor: pointer; transition: 0.3s; }
+.newsletter-form button:hover { background: #fff; color: #000; }
+.footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 20px; font-size: 10px; color: #666; }
+
+@media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .newsletter-form { flex-direction: column; gap: 10px; } }
