@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <!-- 
+      FILE: index.html
+      Mô tả: Chứa cấu trúc HTML cho trang web "Bad Habits Official Store".
+      Sử dụng Tailwind CSS v4 để thiết kế giao diện nhanh chóng.
+    -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Team C Sủi</title>
+
+  <!-- Nhập font Inter từ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Nhập Tailwind CSS CDN để chạy được trực tiếp trên trình duyệt mà không cần build -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Nhập file CSS tùy chỉnh (Đổi thành đường dẫn tương đối) -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-white font-['Inter',sans-serif] text-black">
+
+  <!-- Thanh thông báo (Announcement Bar) -->
+  <div
+    class="bg-black text-white text-[10px] md:text-xs py-2.5 px-4 text-center tracking-[0.2em] font-bold border-b border-white/5">
+    MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+  </div>
+
+  <!-- Header chính -->
+  <header id="main-header"
+    class="sticky top-0 z-50 bg-black text-white border-b border-white/10 transition-all duration-500 py-2">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 flex items-center">
+
+      <!-- Phần Logo bên trái -->
+      <div class="flex-shrink-0 mr-8">
+        <a href="/" class="flex flex-col items-start group">
+          <span
+            class="text-lg md:text-xl font-[900] tracking-tighter leading-none group-hover:text-white/80 transition-colors">
+            C SỦI</span>
+          <span class="text-[6px] md:text-[7px] tracking-[0.4em] font-bold mt-0.5 text-white/60 uppercase">Official Store</span>
+        </a>
+      </div>
+
+      <!-- Phần Menu Desktop (Dàn đều các mục menu) -->
+      <nav class="hidden lg:flex items-center gap-x-20 h-full flex-shrink-0">
+        <!-- Mục MOST POPULAR -->
+        <div class="relative h-full flex items-center">
+          <a href="#"
+            class="text-[10px] font-bold tracking-[0.15em] uppercase hover:text-red-400 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all hover:after:w-full py-2">
+            MOST POPULAR</a>
+        </div>
+        <!-- Mục NEW ARRIVALS -->
+        <div class="relative h-full flex items-center">
+          <a href="#"
+            class="text-[10px] font-bold tracking-[0.15em] uppercase hover:text-red-400 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all hover:after:w-full py-2">
+            NEW ARRIVALS</a>
+        </div>
+
+        <!-- Mục CATALOG với Menu cấp 2 (Dropdown) -->
+        <div class="relative group h-full flex items-center">
+          <a href="#"
+            class="text-[10px] font-bold tracking-[0.15em] uppercase hover:text-red-400 transition-all duration-300 flex items-center gap-1 py-2">
+            CATALOG <svg class=" group-hover:rotate-180 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+          <!-- Menu cấp 2 -->
+          <div
+            class="absolute top-full left-0 w-48 bg-black border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-animate z-50 shadow-2xl">
+            <div class="flex flex-col py-2">
+              <a href="#"
+                class="px-5 py-2.5 text-[10px] font-bold tracking-[0.1em] hover:bg-white/5 hover:pl-7 transition-all duration-300 uppercase border-l-2 border-transparent hover:border-white">T-Shirts</a>
+              <a href="#"
+                class="px-5 py-2.5 text-[10px] font-bold tracking-[0.1em] hover:bg-white/5 hover:pl-7 transition-all duration-300 uppercase border-l-2 border-transparent hover:border-white">Hoodies</a>
+              <a href="#"
+                class="px-5 py-2.5 text-[10px] font-bold tracking-[0.1em] hover:bg-white/5 hover:pl-7 transition-all duration-300 uppercase border-l-2 border-transparent hover:border-white">Jackets</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục COLLECTION với Menu cấp 2 (Dropdown) -->
+        <div class="relative group h-full flex items-center">
+          <a href="#"
+            class="text-[10px] font-bold tracking-[0.15em] uppercase hover:text-red-400 transition-all duration-300 flex items-center gap-1 py-2">
+            COLLECTION <svg class=" group-hover:rotate-180 transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
+          <div
+            class="absolute top-full left-0 w-48 bg-black border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible dropdown-animate z-50 shadow-2xl">
+            <div class="flex flex-col py-2">
+              <a href="#"
+                class="px-5 py-2.5 text-[10px] font-bold tracking-[0.1em] hover:bg-white/5 hover:pl-7 transition-all duration-300 uppercase border-l-2 border-transparent hover:border-white">Summer 2024</a>
+              <a href="#"
+                class="px-5 py-2.5 text-[10px] font-bold tracking-[0.1em] hover:bg-white/5 hover:pl-7 transition-all duration-300 uppercase border-l-2 border-transparent hover:border-white">Winter 2023</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mục INFORMATION -->
+        <div class="relative h-full flex items-center">
+          <a href="#"
+            class="text-[10px] font-bold tracking-[0.15em] uppercase hover:text-red-400 transition-all duration-300 py-2">INFORMATION</a>
+        </div>
+      </nav>
+
+      <!-- Phần Icon bên phải -->
+      <div class="flex items-center gap-3 md:gap-5 ml-auto flex-1 justify-end">
+        <!-- Tìm kiếm với hiệu ứng Hover hiện Input -->
+        <div class="relative group flex items-center justify-end">
+          <a href="#" class="p-1.5 hover:text-white/60 transition-colors flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </a>
+          <!-- Input tìm kiếm hiện ra khi hover hoặc focus -->
+          <input type="text" placeholder="TÌM KIẾM..."
+            class="w-0 group-hover:w-24 md:group-hover:w-32 focus:w-24 md:focus:w-32 transition-all duration-500 bg-transparent border-b border-white/20 text-[9px] font-bold tracking-widest focus:outline-none focus:border-white opacity-0 group-hover:opacity-100 focus:opacity-100 ml-1 placeholder:text-white/40">
+        </div>
+
+        <!-- Tài khoản đổi thành chữ ĐĂNG NHẬP -->
+        <a href="#"
+          class="text-[9px] font-bold tracking-[0.15em] uppercase hover:text-white/60 transition-all duration-300 hidden sm:block whitespace-nowrap">
+          ĐĂNG NHẬP
+        </a>
+
+        <!-- Giỏ hàng đổi thành chữ GIỎ HÀNG -->
+        <a href="#"
+          class="text-[9px] font-bold tracking-[0.15em] uppercase hover:text-white/60 transition-all duration-300 relative flex items-center gap-1.5 whitespace-nowrap">
+          GIỎ HÀNG
+          <span
+            class="bg-red-600 text-white text-[7px] w-3 h-3 flex items-center justify-center rounded-full font-bold">0</span>
+        </a>
+
+        <!-- Nút mở Menu Mobile -->
+        <button id="menu-open" class="lg:hidden p-2 hover:text-white/60 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile (Ẩn mặc định) -->
+  <div id="mobile-menu" class="fixed inset-0 z-[100] hidden">
+    <!-- Lớp phủ mờ nền (Overlay) -->
+    <div id="menu-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    <!-- Nội dung Menu Mobile -->
+    <div
+      class="absolute top-0 left-0 bottom-0 w-[80%] max-w-sm bg-white flex flex-col transform -translate-x-full transition-transform duration-300 ease-out"
+      id="menu-content">
+      <div class="p-6 flex items-center justify-between border-b border-gray-100">
+        <span class="font-black text-xl tracking-tighter text-black">MENU</span>
+        <button id="menu-close" class="p-2 hover:bg-gray-100 rounded-full transition-colors text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto py-4">
+        <a href="#"
+          class="px-6 py-4 text-sm font-bold tracking-widest uppercase flex items-center justify-between border-b border-gray-50 text-black hover:bg-gray-50 transition-colors">MOST POPULAR</a>
+        <a href="#"
+          class="px-6 py-4 text-sm font-bold tracking-widest uppercase flex items-center justify-between border-b border-gray-50 text-black hover:bg-gray-50 transition-colors">NEW ARRIVALS</a>
+        <a href="#"
+          class="px-6 py-4 text-sm font-bold tracking-widest uppercase flex items-center justify-between border-b border-gray-50 text-black hover:bg-gray-50 transition-colors">CATALOG
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg></a>
+        <a href="#"
+          class="px-6 py-4 text-sm font-bold tracking-widest uppercase flex items-center justify-between border-b border-gray-50 text-black hover:bg-gray-50 transition-colors">COLLECTION
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg></a>
+        <a href="#"
+          class="px-6 py-4 text-sm font-bold tracking-widest uppercase text-black border-b border-gray-50 hover:bg-gray-50 transition-colors">INFORMATION</a>
+
+        <!-- Bổ sung Đăng nhập & Giỏ hàng vào Menu Mobile -->
+        <div class="mt-6 px-6 flex flex-col gap-4">
+          <a href="#" class="text-xs font-bold tracking-widest uppercase text-black flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            ĐĂNG NHẬP
+          </a>
+          <a href="#" class="text-xs font-bold tracking-widest uppercase text-black flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            GIỎ HÀNG (0)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nội dung chính của trang (Main Content) -->
+
+  <!-- Nhập file JavaScript xử lý tương tác (Đổi thành đường dẫn tương đối và bỏ type="module" để chạy local dễ hơn) -->
+  <script src="./script.js"></script>
+</body>
+
+</html>

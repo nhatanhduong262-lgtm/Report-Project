@@ -1,0 +1,37 @@
+/* 
+  FILE: style.css
+  Mô tả: Chứa các thiết lập về giao diện và phong cách cho trang web.
+  Sử dụng Tailwind CSS v4 để tối ưu hóa việc thiết kế nhanh.
+*/
+
+/* 
+  FILE: style.css
+  Mô tả: Chứa các thiết lập về giao diện và phong cách cho trang web.
+*/
+
+/* Hiệu ứng cuộn xuống cho menu cấp 2 (Dropdown Animation) */
+.dropdown-animate {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s;
+  opacity: 0;
+}
+
+.group:hover .dropdown-animate {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Tùy chỉnh thanh cuộn cho trình duyệt hiện đại */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
