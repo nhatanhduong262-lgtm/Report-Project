@@ -64,14 +64,22 @@ namespace BadHabits.API.Controllers
                 return BadRequest(new { success = false, message = "Email hoặc mật khẩu không đúng!" });
             }
 
-            // 2. Kiểm tra mật khẩu (So sánh mật khẩu người dùng nhập với chuỗi băm trong DB)
-            // Lưu ý: Đổi loginRequest.PasswordHash thành loginRequest.Password cho khớp với DTO
-            bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash);
+            // 2. Kiểm tra mật khẩu (Bọc thép bằng Try-Catch)
+            bool isPasswordValid = false;
+            try
+            {
+                // BCrypt sẽ thử kiểm tra mật khẩu. Nếu dữ liệu trong DB bị rác/ngắn/hỏng, nó sẽ nhảy ngay xuống catch
+                isPasswordValid = BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash);
+            }
+            catch
+            {
+                // Trả về lỗi đàng hoàng cho giao diện thay vì sập Server
+                return BadRequest(new { success = false, message = "Dữ liệu tài khoản này bị lỗi (hệ thống cũ). Vui lòng đăng ký tài khoản mới!" });
+            }
 
+            // Nếu xác thực thành công nhưng mật khẩu sai
             if (!isPasswordValid)
             {
-
-
                 return BadRequest(new { success = false, message = "Email hoặc mật khẩu không đúng!" });
             }
 
