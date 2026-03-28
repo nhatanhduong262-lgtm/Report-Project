@@ -19,15 +19,14 @@
 
     <header class="badhabits-header">
         <div class="header-container">
-            
             <a href="../TrangChu.html" class="logo-box">
                 <span class="logo-main">C SỦI</span>
                 <span class="logo-sub">OFFICIAL STORE</span>
             </a>
 
-           <nav class="main-nav">
-                <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
-                <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
+            <nav class="main-nav">
+                <a href="#">MOST POPULAR</a>
+                <a href="#">NEW ARRIVALS</a>
                 
                 <div class="dropdown">
                     <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
@@ -54,7 +53,7 @@
                     <input type="text" class="search-input" placeholder="Tìm kiếm...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <a href="../DangNhap/DangNhap.html">ĐĂNG NHẬP</a>
+                <a href="DangNhap.html">ĐĂNG NHẬP</a>
                 <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
             </div>
         </div>
@@ -76,8 +75,14 @@
             </div>
 
             <form class="login-form">
-                <input type="text" placeholder="Nhập email/số điện thoại" required>
-                <button type="submit" class="submit-btn">Tiếp tục</button>
+                <input type="text" id="emailInput" placeholder="Nhập email/số điện thoại" required>
+                
+                <div class="password-group">
+                    <input type="password" id="passwordField" placeholder="Mật khẩu" required>
+                    <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+                </div>
+
+                <button type="submit" id="btnLogin" class="submit-btn">Đăng nhập</button>
             </form>
 
             <a href="../TrangChu.html" class="back-link">Quay lại và tiếp tục mua hàng</a>
@@ -123,5 +128,81 @@
             <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <script>
+        // BẮT BUỘC TRÌNH DUYỆT ĐỢI: Vẽ xong HTML mới chạy code
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            console.log("Giao diện đã tải xong! Đang gắn các nút bấm...");
+
+            // --- PHẦN 1: TÍNH NĂNG MẮT NHÌN MẬT KHẨU ---
+            const btnMatKhau = document.getElementById('togglePassword');
+            const oNhapMatKhau = document.getElementById('passwordField');
+
+            if (btnMatKhau && oNhapMatKhau) {
+                btnMatKhau.addEventListener('click', function () {
+                    if (oNhapMatKhau.getAttribute('type') === 'password') {
+                        oNhapMatKhau.setAttribute('type', 'text');
+                        this.classList.replace('fa-eye-slash', 'fa-eye');
+                    } else {
+                        oNhapMatKhau.setAttribute('type', 'password');
+                        this.classList.replace('fa-eye', 'fa-eye-slash');
+                    }
+                });
+            } else {
+                console.error("Cảnh báo: Không tìm thấy nút Con Mắt (id='togglePassword')");
+            }
+
+            // --- PHẦN 2: TÍNH NĂNG GỌI API ĐĂNG NHẬP ---
+            const loginApiUrl = 'https://localhost:7282/api/Auth/login'; // Đổi 7282 nếu máy bạn chạy số khác
+            const emailInput = document.getElementById('emailInput');
+            const btnLogin = document.getElementById('btnLogin');
+
+            if (btnLogin && emailInput) {
+                btnLogin.addEventListener('click', async function(event) {
+                    event.preventDefault(); 
+
+                    const email = emailInput.value.trim();
+                    const password = oNhapMatKhau.value;
+
+                    if (!email || !password) {
+                        alert("Vui lòng nhập đầy đủ Email và Mật khẩu!");
+                        return;
+                    }
+
+                    try {
+                        const payload = {
+                            email: email,
+                            password: password
+                        };
+
+                        const response = await fetch(loginApiUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // Cất thẻ vào ví trình duyệt
+                            localStorage.setItem('jwtToken', result.token);
+                            alert("Đăng nhập thành công! Chào mừng bạn trở lại.");
+                            window.location.href = '../TrangChu.html';
+                        } else {
+                            alert("Đăng nhập thất bại: " + result.message);
+                        }
+                    } catch (error) {
+                        console.error("Lỗi kết nối:", error);
+                        alert("Không thể kết nối tới Server. Hãy đảm bảo Backend đang chạy!");
+                    }
+                });
+            } else {
+                console.error("Cảnh báo: Không tìm thấy Nút Đăng Nhập (id='btnLogin') hoặc Ô Email (id='emailInput')");
+            }
+        });
+    </script>
 </body>
 </html>

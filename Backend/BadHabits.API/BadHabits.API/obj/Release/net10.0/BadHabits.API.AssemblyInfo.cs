@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BadHabits.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bfd122846d7f5071be472abe80d4925e0fce73a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BadHabits.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BadHabits.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
