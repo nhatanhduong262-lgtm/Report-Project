@@ -1,0 +1,30 @@
+---index---
+Hãy sử dụng ngôn ngữ HTML/CSS code cho tôi 1 khung layout 
+- Menu bên trên header, trong Menu #theo chiều từ trái sang phải có avata(ko để hình ảnh), bên cạnh là logo (#tên logo là"Team C Sủi"),tiếp đến là thanh tìm kiếm, sản phẩm(#khi đi chuột đến vụ trí sản phẩm hiện lên các mục nhỏ như, sản phẩm HOT, Sản phẩm mới), tiếp theo là thông tin, hỗ trợ,giỏ hàng và đăng nhập
+-header chứa logo
+- bên dưới header là phần body hãy tạo các khung layout hàng ngang(#Niêm yết giá bán bên dưới, làm 3 cột layout hàng ngang, giữa mỗi cột chèn thêm 1 layout lớn ngăn cách ko chứa hình ảnh)
+- cuối cùng trang web là footer chứa logo(#trên footer chứa các chính sách điều khoản dịch vụ, email, số điện thoại,các đường link trang mạng xã hôi như facebook, instagram,tiktok) 
+#Lưu ý:
+	- màu của header là màu cam, website màu chủ đạo là trắng và xám, màu thanh menu là màu đen có chữ màu trắng 
+
+---Sửa đổi---
+- sửa đổi header cứ 5 giây tự động đổi sang hình ảnh khác trong phần header tối đa 5 ảnh và lặp lại liên tục
+- hãy ghi chú từng đoạn code 
+---sửa đổi---
+- giữ nguyên chức năng đổi hình nhưng #khi đổi hình hãy tạo chuyển động trượt hình ảnh
+--Information--(phần CAREER)
+Hãy dùng ngôn ngữ HTML/CSS code cho tôi 1 trang web layout 3 cột hàng ngang chỉ chứa nội dung, thông tin về 3 cột Trưởng phòng MECHANDISER,Kế Toán kiểm kê,Nhân viên bán hàng làm 2 dạng hiển thị thông tin ở dạng thu gọn #mặc định chỉ hiển thị thời gian làm việc, địa chỉ,tên vị trí( #Tên cột để trên cùng của cột kiểu chữ in hoa), dạng mở rộng khi bấm vào nút "Thông Tin" sẽ sổ ra thông tin đầy đủ của cột đó(ví dụ: bấm xem thông tin của cột "kế toán kiểm kê" thì chỉ hiển thị thông tin của cột đó)khi mở layout sẽ chia làm 2 cột bên trái sẽ hiển thị thông tin như: tên cột , mô tả công việc,thời gian làm việc, quyền lợi, đường dẫn để gửi CV,hồ sơ ứng tuyển(layout 4 cột hàng ngang gồm "Họ & Tên","Email","Số Điện Thoại","ô để tải file CV" và nút "Gửi"), bên phải sẽ hiển thị bảng thông tin ngắn gọn của cột đó gồm lương hàng tháng, nơi làm việc, vị trí, chức danh
+#Lưu ý:
+	-Ghi chú từng đoạn code
+	-chèn các dữ liệu giả vào các phần (mô tả công việc,yêu cầu,quyền lợi,bảng thông tin) nhưng dữ liệu phải hợp lý với từng phần
+--Sửa đổi(Information)--
+- Sửa lại 3 cột "Trưởng phòng MECHANDISER","Kế Toán kiểm kê" ,"Nhân viên bán hàng" mỗi cột là 1 cột hàng ngang màu chủ đạo là đen trắng 
+
+--Information--(phần STORE)
+-Hãy dùng ngôn ngữ HTML/CSS code cho tôi 1 trang web #chỉ chứa nội dung 
+-Layout trang web chi làm 2 phần phần bên trái hiển thị bản đồ và vị trí của công ty(#bản đồ chiếm 60% trang web),phần bên phải hiển thị các chi nhánh của các các cửa hàng trên toàn quốc (hiển thị tối đa 6 chi nhánh,chiếm 40% trang web), hiển thị thông tin các chi nhánh chia làm 2 dạng,dạng 1 #mặc định hàng 1 hiển thị tên(ví dụ:HÀ NỘI),hàng 2 hiển thị địa chỉ, hàng 3 hiển thị số điện thọai                               (ví dụ: HOTLINE:+84 123456789),hàng thứ 4 hiển thị nút bấm "XEM BẢN ĐỒ" khi bấm vào sẽ hiển thị dạng thứ (Dạng mở rộng),khi bấm vào sẽ dẫn trực tiếp đến địa chỉ google map của chi nhánh đó
+#Lưu ý:
+	- mỗi cột chi nhánh là 1 cột hàng ngang,màu chủ đạo là đen trắng, làm tối đa 6 chi nhanh
+	- chèn thông tin giả vào các cột và địa chỉ google map(#trong 6 địa chỉ giả đó có 1 địa chỉ sẽ chỉ thẳng đến trường đại học Lạc Hồng chỉ chèn địa chỉ ko được ghi tên)
+	- ghi chú từng đoạn code
+
