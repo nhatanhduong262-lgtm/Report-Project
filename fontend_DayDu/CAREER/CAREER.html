@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW ARRIVAL - TEAM C SỦI</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Head_Footer.css">
+
+    <link rel="stylesheet" href="./CAREER.css">
+</head>
+
+<body>
+
+    <!-- ==============================================
+         PHẦN HEADER (ĐẦU TRANG)
+         ============================================== -->
+    <!-- Đây là khu vực header nằm trên cùng của trang web -->
+    <div class="announcement-bar">
+        MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+    </div>
+
+    <header class="badhabits-header">
+        <div class="header-container">
+
+            <a href="../TrangChu.html" class="logo-box">
+                <span class="logo-main">C SỦI</span>
+                <span class="logo-sub">OFFICIAL STORE</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
+                <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
+
+                <div class="dropdown">
+                    <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../T-shirt/T-shirt.html">T-SHIRTS</a>
+                        <a href="../Hoodie/Hoodie.html">HOODIES</a>
+                        <a href="../Jackets/Jackets.html">JACKETS</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../Summer2024/Summer2024.html">SUMMER 2024</a>
+                        <a href="../Winter2023/Winter2023.html">WINTER 2023</a>
+                    </div>
+                </div>
+
+                 <div class="dropdown">
+                    <a href="#">INFORMATION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../CAREER/CAREER.html">CAREER</a>
+                        <a href="../STORE/STORE.html">STORE</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="user-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <a href="../DangNhap/DangNhap.html">ĐĂNG NHẬP</a>
+                <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- ==============================================
+         NỘI DUNG CHÍNH (MAIN CONTENT)
+         ============================================== -->
+    <!-- Bọc toàn bộ phần thân web bằng thẻ main để kiểm soát khoảng cách lề -->
+    <main>
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             A. GIAO DIỆN MẶC ĐỊNH - 3 CỘT THU GỌN 
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="jobs-container" id="jobsList">
+
+            <!-- CỘT 1: VỊ TRÍ TRƯỞNG PHÒNG MECHANDISER -->
+            <div class="job-card">
+                <!-- Tên vị trí tuyển dụng -->
+                <h2 class="job-title">TRƯỞNG PHÒNG MECHANDISER</h2>
+                <!-- Thông tin cơ bản: thời gian -->
+                <p><strong>Thời gian:</strong> 08:00 - 17:30 (Thứ 2 - Thứ 6)</p>
+                <!-- Thông tin cơ bản: địa điểm -->
+                <p><strong>Địa chỉ:</strong> Trụ sở chính Quận 1, TP. HCM</p>
+                <!-- Nút nhấn để xem chi tiết vị trí -->
+                <button class="btn-info" onclick="showJobDetail('job1')">Thông Tin</button>
+            </div>
+
+            <!-- CỘT 2: VỊ TRÍ KẾ TOÁN KIỂM KÊ -->
+            <div class="job-card">
+                <h2 class="job-title">KẾ TOÁN KIỂM KÊ</h2>
+                <p><strong>Thời gian:</strong> 08:30 - 18:00 (Thứ 2 - Thứ 7)</p>
+                <p><strong>Địa chỉ:</strong> Khu vực kho chi nhánh Quận 3, TP. HCM</p>
+                <!-- Nút nhấn để xem chi tiết vị trí -->
+                <button class="btn-info" onclick="showJobDetail('job2')">Thông Tin</button>
+            </div>
+
+            <!-- CỘT 3: VỊ TRÍ NHÂN VIÊN BÁN HÀNG -->
+            <div class="job-card">
+                <h2 class="job-title">NHÂN VIÊN BÁN HÀNG</h2>
+                <p><strong>Thời gian:</strong> Ca tự chọn (8 tiếng/ngày)</p>
+                <p><strong>Địa chỉ:</strong> Các chi nhánh trải rộng trên toàn quốc</p>
+                <!-- Nút nhấn để xem chi tiết vị trí -->
+                <button class="btn-info" onclick="showJobDetail('job3')">Thông Tin</button>
+            </div>
+
+        </div>
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             B. GIAO DIỆN MỞ RỘNG (THÔNG TIN CHI TIẾT TỪNG VỊ TRÍ) 
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <!-- 1. Layout Thông Tin Chi Tiết - JOB 1 -->
+        <div class="job-detail-wrapper" id="detail-job1">
+            <!-- Nút quay về hiển thị lại danh sách 3 cột -->
+            <button class="btn-back" onclick="hideAllDetails()">&#8592; Quay lại danh sách</button>
+
+            <!-- Bộ khung chứa thông tin chia ra làm 2 cột: Trái (chi tiết) và Phải (bảng tóm tắt) -->
+            <div class="detail-layout">
+                <!-- CỘT TRÁI: HIỂN THỊ MÔ TẢ, YÊU CẦU & FORM XIN VIỆC -->
+                <div class="detail-left">
+                    <h2>TRƯỞNG PHÒNG MECHANDISER</h2>
+
+                    <h3>Thời gian làm việc</h3>
+                    <p>Giờ hành chính: 08:00 - 17:30 từ Thứ 2 đến Thứ 6 (Nghỉ Thứ 7 & Chủ Nhật).</p>
+
+                    <h3>Mô tả công việc</h3>
+                    <ul>
+                        <li>Quản lý toàn bộ hoạt động trưng bày và mua bán sản phẩm tại chuỗi cửa hàng.</li>
+                        <li>Nghiên cứu thị trường, theo dõi xu hướng thời trang để đề xuất chiến lược phát triển.</li>
+                        <li>Đàm phán và làm việc trực tiếp với các nhà cung cấp, đảm bảo tiến độ và thẩm mỹ sản phẩm.
+                        </li>
+                    </ul>
+
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ul>
+                        <li>Tốt nghiệp hệ Đại học các khối ngành Quản trị Kinh doanh, Thiết kế Thời trang.</li>
+                        <li>Ít nhất 3 năm kinh nghiệm ở vị trí Mechandiser cấp quản lý.</li>
+                        <li>Sáng tạo, nhạy bén và có tầm nhìn trong lĩnh vực kinh doanh bán lẻ.</li>
+                    </ul>
+
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Làm việc tại môi trường năng động, cơ hội phát triển sự nghiệp rộng mở.</li>
+                        <li>Được cấp phát các thiết bị phục vụ công việc: Laptop, điện thoại chuyên dụng.</li>
+                        <li>Thưởng tháng lương thứ 13, 14 và gói Bảo hiểm sức khỏe VIP toàn diện.</li>
+                    </ul>
+
+                    <h3>Hồ sơ ứng tuyển & Gửi CV</h3>
+                    <!-- Form điền thông tin và nộp hồ sơ xin việc (CV) -->
+                    <form class="apply-form"
+                        onsubmit="event.preventDefault(); alert('Bạn đã gửi CV thành công cho hạng mục Trưởng phòng !');">
+                        <div class="form-row">
+                            <!-- Input: Họ tên ứng viên -->
+                            <input type="text" placeholder="Họ & Tên" required>
+                            <!-- Input: Địa chỉ hộp thư Email -->
+                            <input type="email" placeholder="Email" required>
+                            <!-- Input: Số điện thoại liên lạc -->
+                            <input type="tel" placeholder="Số Điện Thoại" required>
+
+                            <!-- Nhóm Input File và Nút Xác nhận gửi trong cùng 1 khu vực -->
+                            <div class="file-submit-group">
+                                <!-- Khung tải lên file (giới hạn file PDF) -->
+                                <input type="file" required accept=".pdf" title="Tải file hồ sơ CV của bạn">
+                                <!-- Nút Submit để trình gửi Form -->
+                                <button type="submit" class="btn-submit">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- CỘT PHẢI: BẢNG TÓM TẮT THU NHẬP VÀ MỨC LƯƠNG -->
+                <div class="detail-right">
+                    <table class="info-table">
+                        <tr>
+                            <th>Lương hàng tháng</th>
+                            <td>30.000.000 - 50.000.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <th>Nơi làm việc</th>
+                            <td>Trụ sở chính, Tòa A Quận 1, TPHCM</td>
+                        </tr>
+                        <tr>
+                            <th>Vị trí</th>
+                            <td>Quản lý cấp trung</td>
+                        </tr>
+                        <tr>
+                            <th>Chức danh</th>
+                            <td>Trưởng phòng Mechandiser</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Layout Thông Tin Chi Tiết - JOB 2 -->
+        <div class="job-detail-wrapper" id="detail-job2">
+            <!-- Nút quay về hiển thị lại danh sách -->
+            <button class="btn-back" onclick="hideAllDetails()">&#8592; Quay lại danh sách</button>
+
+            <!-- Bố cục 2 phần: Chi tiết (Trái) & Bảng (Phải) -->
+            <div class="detail-layout">
+                <!-- CỘT TRÁI: THÔNG TIN MÔ TẢ -->
+                <div class="detail-left">
+                    <h2>KẾ TOÁN KIỂM KÊ</h2>
+
+                    <h3>Thời gian làm việc</h3>
+                    <p>08:30 - 18:00 làm việc từ Thứ 2 đến Thứ 7 (Nghỉ Chủ Nhật).</p>
+
+                    <h3>Mô tả công việc</h3>
+                    <ul>
+                        <li>Trực tiếp thực hiện kiểm kê hàng hóa tại kho và các chi nhánh theo định kỳ.</li>
+                        <li>Phân tích, đánh giá, phát hiện nguyên nhân làm cho tình trạng sai lệch kho vượt mốc tiêu
+                            chuẩn.</li>
+                        <li>Cập nhật và hạch toán số liệu vào phần mềm kế toán nhanh chóng, chính xác.</li>
+                    </ul>
+
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ul>
+                        <li>Trình độ Cao đẳng/Đại học chuyên ngành Kế toán, Kiểm toán, Tài chính.</li>
+                        <li>Sử dụng thành thạo Word, Excel và các phần mềm ERP (ví dụ Misa, SAP...).</li>
+                        <li>Cẩn thận, tỉ mỉ, trung thực và sẵn sàng đi công tác chi nhánh nếu có cấp bách.</li>
+                    </ul>
+
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Lương cơ bản + Phụ cấp chuyên cần và Phụ cấp đi lại/công tác.</li>
+                        <li>Được đào tạo nâng cao nghiệp vụ quản lý kho bãi.</li>
+                        <li>Phúc lợi đầy đủ với chế độ BHXH, du lịch hằng năm theo quy định công ty.</li>
+                    </ul>
+
+                    <h3>Hồ sơ ứng tuyển & Gửi CV</h3>
+                    <!-- Form nộp ứng tuyển dành cho Kế Toán -->
+                    <form class="apply-form"
+                        onsubmit="event.preventDefault(); alert('Bạn đã ứng tuyển Kế Toán thành công !');">
+                        <div class="form-row">
+                            <input type="text" placeholder="Họ & Tên" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Số Điện Thoại" required>
+                            <div class="file-submit-group">
+                                <input type="file" required accept=".pdf" title="Tải hồ sơ xin việc (PDF)">
+                                <button type="submit" class="btn-submit">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- CỘT PHẢI: BẢNG TÓM TẮT -->
+                <div class="detail-right">
+                    <table class="info-table">
+                        <tr>
+                            <th>Lương hàng tháng</th>
+                            <td>12.000.000 - 15.000.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <th>Nơi làm việc</th>
+                            <td>Khu lưu trữ Kho Tổng, Quận 3, TPHCM</td>
+                        </tr>
+                        <tr>
+                            <th>Vị trí</th>
+                            <td>Nhân viên văn phòng / Kho</td>
+                        </tr>
+                        <tr>
+                            <th>Chức danh</th>
+                            <td>Kế toán viên kiểm kê hàng hóa</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Layout Thông Tin Chi Tiết - JOB 3 -->
+        <div class="job-detail-wrapper" id="detail-job3">
+            <!-- Nút quay về hiển thị lại danh sách -->
+            <button class="btn-back" onclick="hideAllDetails()">&#8592; Quay lại danh sách</button>
+
+            <!-- Bố cục 2 phần: Chi tiết (Trái) & Bảng (Phải) -->
+            <div class="detail-layout">
+                <!-- CỘT TRÁI: THÔNG TIN CHI TIẾT -->
+                <div class="detail-left">
+                    <h2>NHÂN VIÊN BÁN HÀNG</h2>
+
+                    <h3>Thời gian làm việc</h3>
+                    <p>Làm việc theo ca xoay (8 tiếng/ngày). Có hỗ trợ sắp xếp linh hoạt cho các bạn sinh viên.</p>
+
+                    <h3>Mô tả công việc</h3>
+                    <ul>
+                        <li>Trực tiếp đón tiếp, tư vấn các sản phẩm quần áo cho khách hàng tại cửa hàng.</li>
+                        <li>Bảo quản vệ sinh hàng hóa, sắp xếp thu gọn đồ và dọn dẹp không gian gian hàng.</li>
+                        <li>Tiếp nhận, xử lý hoặc hỗ trợ đổi trả đơn hàng khi khách hàng có nhu cầu.</li>
+                    </ul>
+
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ul>
+                        <li>Nam/nữ tuổi từ 18 trở lên, ngoại hình ưa nhìn, tác phong nhanh nhẹn.</li>
+                        <li>Tinh thần dịch vụ tốt, tươi cười thân thiện và biết cách giao tiếp tốt.</li>
+                        <li>Không yêu cầu kinh nghiệm, bạn sẽ được công ty đào tạo nghiệp vụ từ đầu.</li>
+                    </ul>
+
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Tổng thu nhập bao gồm Lương cứng và Trích phần trăm Doanh thu cửa hàng rất hấp dẫn.</li>
+                        <li>Được mua sản phẩm nội bộ thương hiệu công ty với chiết khấu sâu 30-50%.</li>
+                        <li>Có lộ trình thăng tiến rõ rệt lên Quản lý nhóm bán hàng sau 6 tháng xét duyệt nỗ lực.</li>
+                    </ul>
+
+                    <h3>Hồ sơ ứng tuyển & Gửi CV</h3>
+                    <!-- Form nộp ứng tuyển dành cho Bán Hàng -->
+                    <form class="apply-form"
+                        onsubmit="event.preventDefault(); alert('Gửi hồ sơ Bán Hàng thành công!');">
+                        <div class="form-row">
+                            <input type="text" placeholder="Họ & Tên" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Số Điện Thoại" required>
+                            <div class="file-submit-group">
+                                <input type="file" required accept=".pdf" title="Tải File CV ngay">
+                                <button type="submit" class="btn-submit">Gửi</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- CỘT PHẢI: BẢNG TÓM TẮT -->
+                <div class="detail-right">
+                    <table class="info-table">
+                        <tr>
+                            <th>Lương hàng tháng</th>
+                            <td>7.000.000 - 15.000.000 VNĐ (Tính cả thưởng KPI)</td>
+                        </tr>
+                        <tr>
+                            <th>Nơi làm việc</th>
+                            <td>Được sắp xếp ở chi nhánh gần nơi bạn sinh sống nhất</td>
+                        </tr>
+                        <tr>
+                            <th>Vị trí</th>
+                            <td>Nhân viên Store</td>
+                        </tr>
+                        <tr>
+                            <th>Chức danh</th>
+                            <td>Nhân viên tư vấn phân phối sàn</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             C. JAVASCRIPT XỬ LÝ ẨN HIỆN CÁC MỤC
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <script>
+            /**
+             * Hàm mở thông tin chi tiết một Công Việc (Job) cụ thể
+             * Sẽ gọi hàm này khi người dùng bấm vào nút "Thông tin" ở dạng thu gọn.
+             * @param {string} jobId - ID của công việc để gọi hiển thị
+             */
+            function showJobDetail(jobId) {
+                // Bước 1: Ẩn Layout 3 cột hiển thị mặc định (danh sách tóm tắt)
+                document.getElementById('jobsList').style.display = 'none';
+
+                // Bước 2: Duyệt qua tất cả các layout chi tiết, ẩn chúng đi 
+                // (Đảm bảo không có 2 chi tiết nào hiện ra cùng lúc)
+                let details = document.querySelectorAll('.job-detail-wrapper');
+                details.forEach(detail => detail.style.display = 'none');
+
+                // Bước 3: Chỉ hiển thị khối layout cụ thể được truyền vào qua tham số jobId
+                document.getElementById('detail-' + jobId).style.display = 'block';
+            }
+
+            /**
+             * Hàm quay ngược lại danh sách hiển thị mặc định
+             * Được gán vào sự kiện onClick cho nút "Quay lại"
+             */
+            function hideAllDetails() {
+                // Bước 1: Ẩn đi toàn bộ layout mở rộng đang hiển thị trên màn hình
+                let details = document.querySelectorAll('.job-detail-wrapper');
+                details.forEach(detail => detail.style.display = 'none');
+
+                // Bước 2: Bật hiển thị lại Layout 3 cột chính chứa các mục ngắn gọn ban đầu
+                document.getElementById('jobsList').style.display = 'flex';
+            }
+        </script>
+    </main>
+
+    <!-- ==============================================
+         PHẦN FOOTER (CHÂN TRANG WEB)
+         ============================================== -->
+    <!-- Đây là khu vực footer nằm ở dưới cùng của trang web -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>VỀ TEAM C SỦI</h3>
+                <p>Đồ án môn học Thiết kế Web.</p>
+                <p>Đại học Lạc Hồng (LHU)</p>
+                <p>TP. Biên Hòa, Đồng Nai.</p>
+            </div>
+            <div class="footer-col">
+                <h3>CHÍNH SÁCH</h3>
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Điều khoản dịch vụ</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h3>MẠNG XÃ HỘI</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>ĐĂNG KÝ NHẬN TIN</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">GỬI</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
