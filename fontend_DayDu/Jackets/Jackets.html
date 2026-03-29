@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIỎ HÀNG - TEAM C SỦI</title>
+    <title>JACKETS - TEAM C SỦI</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../Head_Footer.css">
-    <link rel="stylesheet" href="GioHang.css">
+    
+    <link rel="stylesheet" href="Jackets.css">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 <span class="logo-sub">OFFICIAL STORE</span>
             </a>
 
-           <nav class="main-nav">
+            <nav class="main-nav">
                 <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
                 <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
                 
@@ -46,50 +47,95 @@
                     </div>
                 </div>
                 
-                <a href="#">INFORMATION</a>
+                <div class="dropdown">
+                    <a href="#">INFORMATION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../CAREER/CAREER.html">CAREER</a>
+                        <a href="../STORE/STORE.html">STORE</a>
+                    </div>
+                </div>
             </nav>
+
             <div class="user-actions">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="Tìm kiếm...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <a href="../DangNhap/DangNhap.html">ĐĂNG NHẬP</a>
-                <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+                <a href="#">ĐĂNG NHẬP</a>
+                <a href="#">GIỎ HÀNG (0)</a>
             </div>
         </div>
     </header>
 
-    <main class="container cart-page-main">
+    <main class="container product-page-main">
         
         <div class="breadcrumb">
-            <a href="../TrangChu.html">TRANG CHỦ</a> / <span>GIỎ HÀNG</span>
+            <a href="../TrangChu.html">TRANG CHỦ</a> / <span>JACKETS</span>
         </div>
 
-        <div class="cart-content-wrapper">
-            <div class="cart-header-row">
-                <h1 class="cart-main-title">CART</h1>
-                <a href="#" class="shipping-returns-link">SHIPPING & RETURNS <i class="fa-solid fa-arrow-right-long"></i></a>
-            </div>
-
-            <div class="cart-total-row">
-                <span class="total-label">TOTAL</span>
-                <span class="total-price">0₫</span>
-            </div>
-
-            <p class="cart-disclaimer">
-                AVAILABILITY OF THIS ITEM IS NOT GUARANTEED UNTIL PAYMENT IS CONFIRMED. PLEASE PROCEED TO CHECKOUT.
-            </p>
-
-            <div class="cart-actions">
-                <button class="checkout-btn">CHECKOUT</button>
-                <a href="../TrangChu.html" class="continue-shopping">CONTINUE SHOPPING</a>
-            </div>
+        <div class="filter-bar">
+            <i class="fa-solid fa-filter"></i> BỘ LỌC SẢN PHẨM
         </div>
 
-        <div class="similar-products-section">
-            <h2 class="similar-title">SẢN PHẨM TƯƠNG TỰ</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="badge">NEW ARRIVAL</span>
+                    <img src="../img/jacket1.png" alt="SIGNATURE VARSITY JACKET">
+                </div>
+                <div class="product-details">
+                    <div class="product-info-left">
+                        <h3 class="product-title">SIGNATURE VARSITY JACKET</h3>
+                        <p class="product-price">850,000đ</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
             </div>
 
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="badge">NEW ARRIVAL</span>
+                    <img src="../img/jacket2.png" alt="STREET BOMBER JACKET">
+                </div>
+                <div class="product-details">
+                    <div class="product-info-left">
+                        <h3 class="product-title">STREET BOMBER JACKET</h3>
+                        <p class="product-price">790,000đ</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="badge">NEW ARRIVAL</span>
+                    <img src="../img/jacket3.png" alt="SPORT WINDBREAKER">
+                </div>
+                <div class="product-details">
+                    <div class="product-info-left">
+                        <h3 class="product-title">SPORT WINDBREAKER</h3>
+                        <p class="product-price">650,000đ</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="badge">NEW ARRIVAL</span>
+                    <img src="../img/jacket4.png" alt="PREMIUM LEATHER JACKET">
+                </div>
+                <div class="product-details">
+                    <div class="product-info-left">
+                        <h3 class="product-title">PREMIUM LEATHER JACKET</h3>
+                        <p class="product-price">1,200,000đ</p>
+                    </div>
+                    <button class="add-to-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <div class="floating-actions">
