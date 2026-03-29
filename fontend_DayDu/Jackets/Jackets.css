@@ -1,0 +1,200 @@
+/* =========================================================
+   --- CSS DÀNH RIÊNG CHO TRANG SẢN PHẨM (JACKETS) --- 
+   ========================================================= */
+
+/* Đẩy toàn bộ khu vực <main> cách xa header và footer ra một chút cho thoáng */
+.product-page-main {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+/* === CSS CHO BREADCRUMB (Đường dẫn TRANG CHỦ / JACKETS) === */
+.breadcrumb {
+    font-size: 11px; 
+    color: #999; 
+    margin-bottom: 20px; 
+    font-weight: 700; 
+}
+.breadcrumb a {
+    color: #999; 
+    text-decoration: none; /* Bỏ gạch chân mặc định của thẻ link <a> */
+    transition: 0.3s; /* Hiệu ứng chuyển màu sẽ mất 0.3 giây (không bị giật cục) */
+}
+.breadcrumb a:hover { 
+    color: #000; /* Khi đưa chuột vào chữ sẽ đổi thành màu đen */
+}
+.breadcrumb span { 
+    color: #000; /* Thẻ span hiển thị trang hiện tại luôn có màu đen */
+}
+
+/* === CSS CHO THANH BỘ LỌC === */
+.filter-bar {
+    border-top: 1px solid #eaeaea; 
+    border-bottom: 1px solid #eaeaea; 
+    padding: 15px 0; 
+    margin-bottom: 30px; 
+    font-size: 11px; 
+    font-weight: 700; 
+    display: flex; /* Dùng Flexbox để dàn icon phễu và chữ trên cùng 1 hàng ngang */
+    align-items: center; /* Canh giữa 2 thành phần theo chiều dọc */
+    gap: 10px; /* Tạo khoảng trống 10px giữa icon và chữ */
+    cursor: pointer; /* Chuột biến thành hình bàn tay khi trỏ vào báo hiệu có thể click */
+    color: #666; 
+}
+.filter-bar:hover { color: #000; }
+
+/* === BỐ CỤC LƯỚI SẢN PHẨM (Kỹ thuật CSS Grid) === */
+.product-grid {
+    display: grid; /* Kích hoạt chế độ Grid (Lưới) */
+    grid-template-columns: repeat(4, 1fr); /* Chia đều lưới thành 4 cột bằng nhau (1fr = 1 phần tử tỷ lệ) */
+    gap: 20px; /* Khoảng cách giữa các cột và hàng là 20px */
+}
+
+/* Khung bọc riêng từng sản phẩm */
+.product-card {
+    display: flex; 
+    flex-direction: column; /* Ép Flexbox xếp các khối bên trong theo chiều dọc (Ảnh nằm trên, Tên Giá nằm dưới) */
+}
+
+/* Khung vuông nền xám chứa ảnh áo */
+.product-image {
+    background-color: #f5f5f5; 
+    position: relative; /* QUAN TRỌNG: Làm điểm neo (gốc) để nhãn NEW ARRIVAL bám vào */
+    padding: 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Canh ảnh áo nằm chính giữa khung xám */
+    aspect-ratio: 1 / 1; /* Ép tỷ lệ khung luôn luôn là hình vuông hoàn hảo (1:1) */
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.product-image:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Hover vào tạo bóng đổ mờ xung quanh tạo chiều sâu */
+}
+
+/* Tùy chỉnh cho tấm ảnh áo bên trong khung */
+.product-image img {
+    max-width: 100%; /* Ngăn không cho ảnh to vượt quá khung chứa */
+    height: auto; 
+    object-fit: contain; /* Ép ảnh thu lại vừa gọn trong khung mà không bị bóp méo tỷ lệ */
+}
+
+/* KỸ THUẬT ĐỊNH VỊ (Nhãn NEW ARRIVAL góc phải) */
+.badge {
+    position: absolute; /* Phân định vị trí tuyệt đối, sẽ bay lơ lửng so với khung có position: relative */
+    top: 15px; /* Cách mép trên của khung ảnh 15px */
+    right: 15px; /* Cách mép phải của khung ảnh 15px */
+    font-size: 9px; 
+    font-weight: 700; 
+    color: #666; 
+}
+
+/* Khu vực thông tin tên áo, giá, nút mua */
+.product-details {
+    display: flex; 
+    justify-content: space-between; /* Đẩy khối Chữ sang mép trái, Nút Cộng sang mép phải */
+    align-items: flex-start; /* Canh hai bên ngang hàng nhau từ trên đỉnh xuống */
+    padding-top: 15px; 
+}
+
+/* Khung bên trái (Chứa tên và giá) */
+.product-info-left {
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px; 
+}
+
+.product-title {
+    font-size: 11px; 
+    font-weight: 700; 
+    cursor: pointer; 
+}
+.product-title:hover { color: #8C2F2F; /* Đổi sang màu đỏ mận khi hover */ }
+
+.product-price {
+    font-size: 11px; 
+    font-weight: 400; 
+    color: #333; 
+}
+
+/* Nút thêm vào giỏ hàng (Icon dấu cộng) */
+.add-to-cart-btn {
+    background: none; /* Bỏ nền mặc định của nút */
+    border: none; /* Bỏ viền mặc định của nút */
+    font-size: 14px; 
+    cursor: pointer; 
+    color: #000; 
+    transition: 0.3s; 
+}
+.add-to-cart-btn:hover { 
+    color: #8C2F2F; 
+    transform: scale(1.2); /* Phóng to nút lên 1.2 lần (120%) khi đưa chuột vào */
+}
+
+/* === CÁC NÚT TRÔI NỔI BÊN PHẢI (CART & ZALO) === */
+.floating-actions {
+    position: fixed; /* Ghim cứng vào màn hình, cuộn chuột nút vẫn đứng yên */
+    bottom: 30px; /* Cách mép dưới màn hình 30px */
+    right: 30px; /* Cách mép phải màn hình 30px */
+    display: flex;
+    flex-direction: column; /* Xếp 2 nút nối đuôi nhau theo chiều dọc */
+    gap: 10px; 
+    z-index: 1000; /* Lớp z-index cao giúp nút luôn nổi đè lên trên tất cả các nội dung khác */
+}
+
+/* Khung tròn chung định hình cho cả 2 nút */
+.float-btn {
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; /* Bo tròn 50% để tạo thành hình tròn tuyệt đối */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: #fff; 
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    position: relative; /* Làm điểm gốc cho con số Giỏ hàng bám vào */
+    transition: 0.3s;
+}
+.float-btn:hover { 
+    transform: translateY(-5px); /* Hiệu ứng hover làm nút nảy lên trên (trục Y) 5px */
+}
+
+.float-cart { background: #000; font-size: 18px; }
+
+/* Số lượng hiện trên góc giỏ hàng */
+.cart-count {
+    position: absolute; 
+    top: -5px; /* Tràn ra ngoài mép trên 5px */
+    right: -5px; /* Tràn ra ngoài mép phải 5px */
+    background: #000; 
+    color: #fff; 
+    border: 2px solid #fff; /* Viền trắng bao quanh tạo ranh giới với nền nút */
+    font-size: 10px; 
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.float-zalo { background: #0068FF; font-size: 11px; font-weight: 900; }
+
+/* === KỸ THUẬT RESPONSIVE (THÍCH ỨNG THIẾT BỊ) === */
+/* Trình duyệt sẽ tự đọc kích thước màn hình để áp dụng CSS bên dưới */
+
+@media (max-width: 1024px) { 
+    /* Dành cho màn hình nhỏ hơn 1024px (Tablet / iPad) */
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Thu gọn lại chỉ còn 2 cột */
+    }
+}
+
+@media (max-width: 600px) { 
+    /* Dành cho màn hình nhỏ hơn 600px (Điện thoại di động) */
+    .product-grid { 
+        grid-template-columns: 1fr; /* Thu gọn tối đa chỉ còn 1 cột dọc duy nhất */
+    }
+}
