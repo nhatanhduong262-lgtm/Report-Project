@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEW ARRIVALS - TEAM C SỦI</title>
-    
+    <title>DANH MỤC SẢN PHẨM - TEAM C SỦI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../Head_Footer.css">
-    <link rel="stylesheet" href="./NEW_ARRIVALS.css">
+    <link rel="stylesheet" href="../TrangChu.css"> 
 </head>
-
 <body>
     <header class="badhabits-header">
         <div class="header-container">
@@ -21,7 +18,7 @@
             </a>
             <nav class="main-nav">
                 <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
-                <a href="./NEW_ARRIVALS.html">NEW ARRIVALS</a>
+                <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
                 <div class="dropdown">
                     <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="dropdown-menu" id="catalogMenu">
@@ -47,14 +44,16 @@
         </div>
     </header>
 
-    <main class="container product-page-main">
+    <main class="container product-page-main" style="margin-top: 50px;">
         <div class="breadcrumb">
-            <a href="../TrangChu.html">TRANG CHỦ</a> / <span>NEW ARRIVALS</span>
+            <a href="../TrangChu.html">TRANG CHỦ</a> / <span id="categoryTitleName">DANH SÁCH SẢN PHẨM</span>
         </div>
-        <h2 class="section-title">HÀNG MỚI VỀ</h2>
-
+        <div class="filter-bar" style="margin-bottom: 20px; font-weight: bold;">
+            <i class="fa-solid fa-filter"></i> BỘ LỌC SẢN PHẨM
+        </div>
+        
         <div class="product-grid" id="dynamicProductGrid">
-            <p style="text-align: center; width: 100%; padding: 50px;">Đang tải sản phẩm mới nhất...</p>
+            <p style="text-align: center; width: 100%; padding: 50px;">Đang tải sản phẩm...</p>
         </div>
     </main>
 
@@ -66,22 +65,27 @@
 
     <script src="../global.js"></script>
     <script>
-        async function loadNewArrivals() {
+        async function loadProductsByCategory() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryId = urlParams.get('categoryId');
             const grid = document.getElementById('dynamicProductGrid');
+
+            if (!categoryId) {
+                grid.innerHTML = '<p style="text-align:center; width:100%; color: red;">Không tìm thấy mã danh mục hợp lệ trên URL!</p>';
+                return;
+            }
+
             try {
-                const response = await fetch('https://localhost:7282/api/Products');
+                // Lọc sản phẩm theo CategoryId
+                const response = await fetch(`https://localhost:7282/api/Products?categoryId=${categoryId}`);
                 const result = await response.json();
 
                 if (result.success && result.data.length > 0) {
                     grid.innerHTML = ''; 
-                    // Lật ngược mảng để cái nào tạo sau (mới nhất) sẽ lên đầu
-                    const products = result.data.reverse().slice(0, 12); 
-                    
-                    products.forEach(product => {
+                    result.data.forEach(product => {
                         const productCard = `
                             <div class="product-card">
                                 <div class="product-image">
-                                    <span class="badge" style="background-color: #000;">NEW ARRIVAL</span>
                                     <a href="../SanPham/ChiTiet.html?id=${product.id}">
                                         <img src="${product.imageUrl}" alt="${product.name}" class="main-img" onerror="this.src='https://via.placeholder.com/300x400?text=No+Image'">
                                     </a>
@@ -93,19 +97,21 @@
                                         </a>
                                         <p class="product-price">${product.price.toLocaleString('vi-VN')}đ</p>
                                     </div>
-                                    <button class="add-to-cart-btn" onclick="alert('Vào chi tiết để chọn size nhé!')"><i class="fa-solid fa-plus"></i></button>
+                                    <button class="add-to-cart-btn" onclick="requireLoginForCart('../SanPham/ChiTiet.html?id=${product.id}')"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
                         `;
                         grid.innerHTML += productCard;
                     });
+                } else {
+                    grid.innerHTML = '<p style="text-align:center; width: 100%; padding: 50px;">Chưa có sản phẩm nào thuộc danh mục này. Đang chờ Team C Sủi nhập hàng!</p>';
                 }
             } catch (error) {
                 console.error("Lỗi:", error);
-                grid.innerHTML = '<p style="text-align:center; width:100%;">Lỗi kết nối máy chủ!</p>';
+                grid.innerHTML = '<p style="text-align:center; width:100%;">Lỗi kết nối máy chủ C#!</p>';
             }
         }
-        document.addEventListener('DOMContentLoaded', loadNewArrivals);
+        document.addEventListener('DOMContentLoaded', loadProductsByCategory);
     </script>
 </body>
 </html>

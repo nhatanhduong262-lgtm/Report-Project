@@ -19,7 +19,6 @@
 
     <header class="badhabits-header">
         <div class="header-container">
-            
             <a href="../TrangChu.html" class="logo-box">
                 <span class="logo-main">C SỦI</span>
                 <span class="logo-sub">OFFICIAL STORE</span>
@@ -31,18 +30,15 @@
                 
                 <div class="dropdown">
                     <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="../T-shirt/T-shirt.html">T-SHIRTS</a>
-                        <a href="../Hoodie/Hoodie.html">HOODIES</a>
-                        <a href="../Jackets/Jackets.html">JACKETS</a>
+                    <div class="dropdown-menu" id="catalogMenu">
+                        <a href="#">Đang tải danh mục...</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
                     <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="../Summer2024/Summer2024.html">SUMMER 2024</a>
-                        <a href="../Winter2023/Winter2023.html">WINTER 2023</a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="#">Đang tải bộ sưu tập...</a>
                     </div>
                 </div>
                 
@@ -54,7 +50,8 @@
                     <input type="text" class="search-input" placeholder="Tìm kiếm...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <a href="../DangNhap/DangNhap.html">ĐĂNG NHẬP</a>
+                <a href="./DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
+                <a href="../LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
                 <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
             </div>
         </div>
@@ -75,12 +72,22 @@
                 <span>Hoặc</span>
             </div>
 
-            <form class="login-form">
-                <input type="text" placeholder="Nhập email/số điện thoại" required>
-                <button type="submit" class="submit-btn">Tiếp tục</button>
+            <form class="login-form" id="loginForm">
+                <input type="email" id="emailInput" placeholder="Nhập địa chỉ Email (VD: na@gmail.com)" required style="width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu" required style="margin-top: 15px; width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">Đăng Nhập</button>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 14px;">
+                    <a href="#" style="color: #666; text-decoration: underline;">Quên mật khẩu?</a>
+                    <a href="../DangKy/DangKy.html" style="color: #000; font-weight: bold; text-decoration: underline;">Chưa có tài khoản? Đăng ký ngay</a>
+                </div>
             </form>
 
-            <a href="../TrangChu.html" class="back-link">Quay lại và tiếp tục mua hàng</a>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="../TrangChu.html" class="back-link">Quay lại và tiếp tục mua hàng</a>
+            </div>
 
             <div class="login-footer">
                 Powered by <strong>Team C Sủi</strong>
@@ -89,39 +96,44 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h3>VỀ TEAM C SỦI</h3>
-                <p>Đồ án môn học Thiết kế Web.</p>
-                <p>Đại học Lạc Hồng (LHU)</p>
-                <p>TP. Biên Hòa, Đồng Nai.</p>
-            </div>
-            <div class="footer-col">
-                <h3>CHÍNH SÁCH</h3>
-                <a href="#">Chính sách bảo mật</a>
-                <a href="#">Chính sách đổi trả</a>
-                <a href="#">Điều khoản dịch vụ</a>
-                <a href="#">FAQs</a>
-            </div>
-            <div class="footer-col">
-                <h3>MẠNG XÃ HỘI</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>ĐĂNG KÝ NHẬN TIN</h3>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
-                    <button type="submit">GỬI</button>
-                </form>
-            </div>
-        </div>
         <div class="footer-bottom container">
             <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
+
+    <script src="../global.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+
+            const userEmail = document.getElementById('emailInput').value;
+            const userPass = document.getElementById('passwordInput').value;
+
+            try {
+                const response = await fetch('https://localhost:7282/api/Auth/Login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // FIX LỖI Ở ĐÂY: Đổi "username" thành "email" để khớp với Swagger của bạn
+                    body: JSON.stringify({ email: userEmail, password: userPass })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    localStorage.setItem('jwtToken', result.data); 
+                    alert('Đăng nhập thành công! Chào mừng trở lại.');
+                    window.location.href = '../TrangChu.html'; 
+                } else {
+                    alert('Đăng nhập thất bại: ' + (result.message || 'Email hoặc mật khẩu không đúng!'));
+                }
+            } catch (error) {
+                console.error('Lỗi:', error);
+                alert('Không thể kết nối đến máy chủ Backend!');
+            }
+        });
+    </script>
 </body>
 </html>
