@@ -1,6 +1,5 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\",
   "Documents": [
     {
@@ -22,13 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-  "WorkspaceRootPath": "D:\\Report Project\\Report-Project\\Backend\\BadHabits.API\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|d:\\report project\\report-project\\backend\\badhabits.api\\badhabits.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +30,6 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
           "SelectedChildIndex": 3,
           "Children": [
             {
@@ -103,22 +94,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-29T15:26:56.874Z"
-=======
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Report Project\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\Program.cs",
-              "RelativeDocumentMoniker": "BadHabits.API\\Program.cs",
-              "ToolTip": "D:\\Report Project\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\Program.cs",
-              "RelativeToolTip": "BadHabits.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T06:11:38.467Z",
-              "EditorCaption": ""
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             }
           ]
         }

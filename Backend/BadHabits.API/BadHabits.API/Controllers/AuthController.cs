@@ -64,34 +64,18 @@ namespace BadHabits.API.Controllers
                 return BadRequest(new { success = false, message = "Email hoặc mật khẩu không đúng!" });
             }
 
-<<<<<<< HEAD
             // 2. Kiểm tra mật khẩu (So sánh mật khẩu người dùng nhập với chuỗi băm trong DB)
             // Lưu ý: Đổi loginRequest.PasswordHash thành loginRequest.Password cho khớp với DTO
             bool isPasswordValid = false;
             try
             {
-=======
-            // 2. Kiểm tra mật khẩu (Bọc thép bằng Try-Catch)
-            bool isPasswordValid = false;
-            try
-            {
-                // BCrypt sẽ thử kiểm tra mật khẩu. Nếu dữ liệu trong DB bị rác/ngắn/hỏng, nó sẽ nhảy ngay xuống catch
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
                 isPasswordValid = BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash);
             }
             catch
             {
-<<<<<<< HEAD
                 return BadRequest(new { success = false, message = "Dữ liệu tài khoản lỗi. Vui lòng tạo tài khoản mới!" });
             }
 
-=======
-                // Trả về lỗi đàng hoàng cho giao diện thay vì sập Server
-                return BadRequest(new { success = false, message = "Dữ liệu tài khoản này bị lỗi (hệ thống cũ). Vui lòng đăng ký tài khoản mới!" });
-            }
-
-            // Nếu xác thực thành công nhưng mật khẩu sai
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             if (!isPasswordValid)
             {
                 return BadRequest(new { success = false, message = "Email hoặc mật khẩu không đúng!" });
@@ -99,11 +83,7 @@ namespace BadHabits.API.Controllers
 
             // --- BẮT ĐẦU TẠO TOKEN ---
             var tokenHandler = new JwtSecurityTokenHandler();
-<<<<<<< HEAD
             var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
-=======
-            var key = Encoding.UTF8.GetBytes("Jwt:Key");
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 
             // Nhét thông tin của user vào thẻ (Tên, Email, Quyền hạn)
             var tokenDescriptor = new SecurityTokenDescriptor

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANG CHỦ - TEAM C SỦI</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./Head_Footer.css">
+    <link rel="stylesheet" href="./TrangChu.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+    </div>
+
+   <header class="badhabits-header">
+        <div class="header-container">
+            
+            <a href="./TrangChu.html" class="logo-box">
+                <span class="logo-main">C SỦI</span>
+                <span class="logo-sub">OFFICIAL STORE</span>
+            </a>
+
+           <nav class="main-nav">
+                <a href="./MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
+                <a href="./NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
+                
+              <div class="dropdown">
+                    <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="catalogMenu">
+                        <a href="#">Đang tải danh mục...</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="#">Đang tải bộ sưu tập...</a>
+                    </div>
+                </div>
+                
+                <a href="#">INFORMATION</a>
+            </nav>
+
+           <div class="user-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <a href="./DangNhap/DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
+                <a href="./LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
+                <a href="./GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="banner-slider">
+        <div class="slider-track">
+            <div class="slide"><img src="./img/Banner1.png" alt="Banner 1"></div>
+            <div class="slide"><img src="./img/Banner2.png" alt="Banner 2"></div>
+            <div class="slide"><img src="./img/Banner3.png" alt="Banner 3"></div>
+            <div class="slide"><img src="./img/Banner1.png" alt="Banner 1"></div>
+        </div>
+    </div>
+
+    <main class="container product-page-main">
+        <h2 class="section-title">DANH SÁCH SẢN PHẨM</h2>
+
+        <div class="product-grid" id="dynamicProductGrid">
+            <p style="text-align: center; width: 100%; padding: 50px;">Đang tải sản phẩm mới nhất...</p>
+        </div>
+
+        <div class="shop-pagination">
+            <a href="#" class="prev-page"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#" class="next-page"><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+    </main>
+
+    <div class="floating-actions">
+        <div class="float-btn float-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+        </div>
+        <div class="float-btn float-zalo">
+            Zalo
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>VỀ TEAM C SỦI</h3>
+                <p>Đồ án môn học Thiết kế Web.</p>
+                <p>Đại học Lạc Hồng (LHU)</p>
+                <p>TP. Biên Hòa, Đồng Nai.</p>
+            </div>
+            <div class="footer-col">
+                <h3>CHÍNH SÁCH</h3>
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Điều khoản dịch vụ</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h3>MẠNG XÃ HỘI</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>ĐĂNG KÝ NHẬN TIN</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">GỬI</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+    
+    <script src="./global.js"></script>
+    
+    <script>
+        async function loadAllProducts() {
+            const grid = document.getElementById('dynamicProductGrid');
+            if (!grid) return;
+
+            try {
+                const response = await fetch('https://localhost:7282/api/Products');
+                const result = await response.json();
+
+                if (result.success && result.data.length > 0) {
+                    grid.innerHTML = ''; 
+                    
+                    const products = result.data.slice(0, 8); 
+                    
+                    products.forEach(product => {
+                        const productCard = `
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <span class="badge" style="background-color: #dc3545;">HOT</span>
+                                    <a href="./SanPham/ChiTiet.html?id=${product.id}">
+                                        <img src="${product.imageUrl}" alt="${product.name}" class="main-img" onerror="this.src='https://via.placeholder.com/300x400?text=No+Image'">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <div class="product-info-left">
+                                        <a href="./SanPham/ChiTiet.html?id=${product.id}" style="text-decoration:none; color:inherit;">
+                                            <h3 class="product-title">${product.name}</h3>
+                                        </a>
+                                        <p class="product-price">${product.price.toLocaleString('vi-VN')}đ</p>
+                                    </div>
+                                    <button class="add-to-cart-btn" onclick="requireLoginForCart('./SanPham/ChiTiet.html?id=${product.id}')"><i class="fa-solid fa-plus"></i></button>
+                                </div>
+                            </div>
+                        `;
+                        grid.innerHTML += productCard;
+                    });
+                } else {
+                    grid.innerHTML = '<p style="text-align:center; width: 100%; padding: 50px;">Chưa có sản phẩm nào.</p>';
+                }
+            } catch (error) {
+                console.error("Lỗi:", error);
+                grid.innerHTML = '<p style="text-align:center; width:100%;">Lỗi kết nối máy chủ!</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAllProducts);
+    </script>
+</body>
+</html>

@@ -6,17 +6,10 @@ namespace BadHabits.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-<<<<<<< HEAD
         private static readonly string[] Summaries =
         [
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         ];
-=======
-        private static readonly string[] Summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()

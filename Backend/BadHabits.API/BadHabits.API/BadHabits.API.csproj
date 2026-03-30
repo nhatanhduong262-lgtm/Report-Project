@@ -1,18 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-<<<<<<< HEAD
 		<TargetFramework>net10.0</TargetFramework>
-=======
-		<TargetFramework>net6.0</TargetFramework>
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
-<<<<<<< HEAD
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
@@ -20,15 +15,6 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
-=======
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.36" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.36" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.36">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 	</ItemGroup>
 
 </Project>

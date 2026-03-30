@@ -9,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-<<<<<<< HEAD
 // 1. Chống lặp vòng dữ liệu JSON
 builder.Services.AddControllers().AddJsonOptions(x =>
     x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
@@ -23,13 +22,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
-=======
-// Add services to the container.
-
-builder.Services.AddControllers().AddJsonOptions(x =>
-    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -53,18 +45,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(jwtKeyBytes)
         };
     });
-<<<<<<< HEAD
-=======
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 
 var app = builder.Build();
 
@@ -73,23 +53,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-<<<<<<< HEAD
     app.UseCors("AllowAll");
     app.UseAuthentication();
     app.UseAuthorization();
-=======
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 }
 
 app.UseHttpsRedirection();
 
-<<<<<<< HEAD
 app.UseAuthentication(); 
-=======
-app.UseAuthentication();
-
-app.UseCors("AllowFrontend"); // BẮT BUỘC phải nằm trên Authorization
->>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
 
 app.UseAuthorization();
 
