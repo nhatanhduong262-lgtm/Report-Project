@@ -10,42 +10,27 @@
     <link rel="stylesheet" href="./Head_Footer.css">
     
     <style>
-        .history-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 20px;
-            min-height: 50vh;
-        }
-        .history-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-        .order-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .order-table th, .order-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-        }
-        .order-table th {
-            background-color: #000;
-            color: #fff;
-            text-transform: uppercase;
-        }
-        .status-badge {
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            background-color: #28a745; /* Màu xanh lá cho thành công */
-            color: white;
-        }
+        .history-container { max-width: 1000px; margin: 50px auto; padding: 20px; min-height: 50vh; }
+        .history-title { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; }
+        
+        .order-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .order-header { background: #f9f9f9; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .order-header-left { font-size: 14px; color: #555; line-height: 1.6;}
+        .order-id { font-size: 18px; font-weight: bold; color: #000; }
+        .status-badge { padding: 5px 12px; border-radius: 4px; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+        .status-Pending { background: #ffc107; color: #000; }
+        .status-Completed { background: #28a745; color: #fff; }
+        
+        .order-body { padding: 20px; }
+        .order-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .order-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .item-img { width: 60px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;}
+        .item-details { flex: 1; }
+        .item-name { font-weight: bold; font-size: 15px; margin-bottom: 5px; }
+        .item-qty-price { font-size: 14px; color: #666; }
+        
+        .order-footer { padding: 15px 20px; background: #fafafa; border-top: 1px solid #ddd; text-align: right; font-size: 18px; font-weight: bold; }
+        .empty-history { text-align: center; padding: 50px; font-size: 18px; color: #666; background: #f9f9f9; border-radius: 8px; }
     </style>
 </head>
 
@@ -62,13 +47,13 @@
                 <div class="dropdown">
                     <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="dropdown-menu" id="catalogMenu">
-                        <a href="#">Đang tải danh mục...</a>
+                        <a href="#">Đang tải...</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="dropdown-menu" id="collectionMenu">
-                        <a href="#">Đang tải bộ sưu tập...</a>
+                        <a href="#">Đang tải...</a>
                     </div>
                 </div>
             </nav>
@@ -79,7 +64,7 @@
                 </div>
                 <a href="./DangNhap/DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
                 <a href="./LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
-                <a href="./GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+                <a href="./GioHang/GioHang.html">GIỎ HÀNG</a>
             </div>
         </div>
     </header>
@@ -87,7 +72,7 @@
     <main class="history-container">
         <h2 class="history-title">LỊCH SỬ MUA HÀNG CỦA BẠN</h2>
         <div id="orderContent">
-            <p style="text-align: center;">Đang tải dữ liệu...</p>
+            <p style="text-align: center;">Đang tải dữ liệu từ máy chủ...</p>
         </div>
     </main>
 
@@ -104,13 +89,13 @@
             const contentDiv = document.getElementById('orderContent');
 
             if (!token) {
-                contentDiv.innerHTML = '<p style="text-align:center; color: red; font-weight: bold;">Vui lòng ĐĂNG NHẬP để xem lịch sử đơn hàng!</p>';
+                contentDiv.innerHTML = '<div class="empty-history"><i class="fa-solid fa-lock" style="font-size: 40px; margin-bottom: 15px; color: #ccc;"></i><br>Vui lòng <strong><a href="./DangNhap/DangNhap.html" style="color: black;">ĐĂNG NHẬP</a></strong> để xem lịch sử mua hàng!</div>';
                 return;
             }
 
             try {
-                // Gọi API lấy lịch sử (kèm Token bảo mật)
-                const response = await fetch('https://localhost:7282/api/Orders', {
+                // Gọi API lịch sử khớp với C#
+                const response = await fetch('https://localhost:7282/api/Orders/history', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -122,45 +107,62 @@
                     const result = await response.json();
                     
                     if (result.success && result.data.length > 0) {
-                        let tableHTML = `
-                            <table class="order-table">
-                                <thead>
-                                    <tr>
-                                        <th>Mã Đơn</th>
-                                        <th>Ngày Đặt</th>
-                                        <th>Tổng Tiền</th>
-                                        <th>Trạng Thái</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                        `;
+                        let html = '';
                         
                         result.data.forEach(order => {
-                            // Giả sử API trả về orderDate và totalAmount
-                            const date = new Date(order.orderDate || Date.now()).toLocaleDateString('vi-VN');
-                            const total = (order.totalAmount || 0).toLocaleString('vi-VN');
+                            const date = new Date(order.orderDate).toLocaleString('vi-VN');
+                            const total = order.totalPrice.toLocaleString('vi-VN');
                             
-                            tableHTML += `
-                                <tr>
-                                    <td><strong>#ORD-${order.id}</strong></td>
-                                    <td>${date}</td>
-                                    <td>${total}đ</td>
-                                    <td><span class="status-badge">Hoàn Tất</span></td>
-                                </tr>
+                            // Tạo class CSS cho trạng thái (Pending màu vàng, Completed màu xanh)
+                            const statusClass = order.status === 'Pending' ? 'status-Pending' : 'status-Completed';
+                            const statusText = order.status === 'Pending' ? 'Đang Xử Lý' : 'Hoàn Tất';
+
+                            // Render chi tiết từng cái áo trong đơn hàng này
+                            let itemsHtml = '';
+                            if (order.items && order.items.length > 0) {
+                                order.items.forEach(item => {
+                                    itemsHtml += `
+                                        <div class="order-item">
+                                            <img src="${item.imageUrl}" class="item-img" onerror="this.src='https://via.placeholder.com/60x80?text=No+Img'">
+                                            <div class="item-details">
+                                                <div class="item-name">${item.productName}</div>
+                                                <div class="item-qty-price">Số lượng: ${item.quantity} x ${item.unitPrice.toLocaleString('vi-VN')}đ</div>
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            }
+
+                            html += `
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div class="order-header-left">
+                                            <div class="order-id">ĐƠN HÀNG #ORD-${order.orderId}</div>
+                                            <div>Ngày đặt: ${date}</div>
+                                            <div>Giao đến: ${order.shippingAddress || 'Không có địa chỉ'}</div>
+                                        </div>
+                                        <div><span class="status-badge ${statusClass}">${statusText}</span></div>
+                                    </div>
+                                    <div class="order-body">
+                                        ${itemsHtml}
+                                    </div>
+                                    <div class="order-footer">
+                                        Tổng Tiền: ${total}đ
+                                    </div>
+                                </div>
                             `;
                         });
                         
-                        tableHTML += `</tbody></table>`;
-                        contentDiv.innerHTML = tableHTML;
+                        contentDiv.innerHTML = html;
                     } else {
-                        contentDiv.innerHTML = '<p style="text-align:center;">Bạn chưa có đơn hàng nào. Hãy shopping thôi!</p>';
+                        contentDiv.innerHTML = '<div class="empty-history">Bạn chưa có đơn hàng nào. Hãy shopping thôi!</div>';
                     }
                 } else {
-                    contentDiv.innerHTML = '<p style="text-align:center; color: red;">Phiên đăng nhập hết hạn hoặc lỗi máy chủ.</p>';
+                    contentDiv.innerHTML = '<div class="empty-history" style="color: red;">Phiên đăng nhập hết hạn hoặc lỗi máy chủ.</div>';
                 }
             } catch (error) {
                 console.error('Lỗi:', error);
-                contentDiv.innerHTML = '<p style="text-align:center;">Lỗi kết nối đến Server!</p>';
+                contentDiv.innerHTML = '<div class="empty-history">Lỗi kết nối đến Server C#!</div>';
             }
         }
 

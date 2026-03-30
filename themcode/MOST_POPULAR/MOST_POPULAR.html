@@ -93,7 +93,7 @@
                                         </a>
                                         <p class="product-price">${product.price.toLocaleString('vi-VN')}đ</p>
                                     </div>
-                                    <button class="add-to-cart-btn" onclick="alert('Vào chi tiết để chọn size nhé!')"><i class="fa-solid fa-plus"></i></button>
+                                    <button class="add-to-cart-btn" onclick="requireLoginForCart('../SanPham/ChiTiet.html?id=${product.id}')"><i class="fa-solid fa-plus"></i></button>
                                 </div>
                             </div>
                         `;

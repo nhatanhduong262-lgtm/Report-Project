@@ -145,8 +145,7 @@
                 });
 
                 if (response.ok) {
-                    alert(`Đã thêm ${size} vào giỏ hàng thành công!`);
-                    // Đá khách sang giỏ hàng để chốt tiền luôn
+                    await showModal(`Đã thêm Size ${size} vào giỏ hàng thành công!`, 'alert');
                     window.location.href = '../GioHang/GioHang.html';
                 } else {
                     alert('Lưu ý: API Thêm giỏ hàng đang bảo trì, nhưng luồng chạy đã chuẩn!');

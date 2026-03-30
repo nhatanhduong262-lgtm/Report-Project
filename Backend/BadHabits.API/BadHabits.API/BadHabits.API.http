@@ -1,0 +1,6 @@
+@BadHabits.API_HostAddress = http://localhost:5037
+
+GET {{BadHabits.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

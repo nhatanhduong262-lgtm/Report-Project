@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|c:\\users\\admin\\desktop\\backend\\badhabits.api\\badhabits.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69141E02-AD1D-0F45-7315-D2E21E8309E7}|BadHabits.API\\BadHabits.API.csproj|solutionrelative:badhabits.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "BadHabits.API\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "BadHabits.API\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-30T03:20:21.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "BadHabits.API\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\CartController.cs",
+              "RelativeToolTip": "BadHabits.API\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:56:30.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Program.cs",
+              "RelativeDocumentMoniker": "BadHabits.API\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Program.cs",
+              "RelativeToolTip": "BadHabits.API\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAqwDcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:27:09.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "BadHabits.API\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "BadHabits.API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAiwFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:27:03.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "BadHabits.API\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "BadHabits.API\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:26:56.874Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
