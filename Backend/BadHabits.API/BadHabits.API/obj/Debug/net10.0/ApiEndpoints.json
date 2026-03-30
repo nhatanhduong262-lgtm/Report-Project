@@ -61,13 +61,18 @@
     "Parameters": [
       {
         "Name": "request",
+<<<<<<< HEAD
         "Type": "BadHabits.API.Controllers.CartController\u002BAddToCartRequest",
+=======
+        "Type": "BadHabits.API.DTOs.AddToCartDto",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "BadHabits.API.Controllers.CartController",
     "Method": "RemoveItem",
     "RelativePath": "api/Cart/remove/{cartItemId}",
@@ -115,6 +120,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     "ContainingType": "BadHabits.API.Controllers.OrdersController",
     "Method": "Checkout",
     "RelativePath": "api/Orders/checkout",
@@ -131,6 +138,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "BadHabits.API.Controllers.OrdersController",
     "Method": "GetMyOrderHistory",
     "RelativePath": "api/Orders/history",
@@ -157,6 +165,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     "ContainingType": "BadHabits.API.Controllers.ProductsController",
     "Method": "CreateProduct",
     "RelativePath": "api/Products",
@@ -165,8 +175,13 @@
     "Order": 0,
     "Parameters": [
       {
+<<<<<<< HEAD
         "Name": "product",
         "Type": "BadHabits.API.Models.Product",
+=======
+        "Name": "newProductDto",
+        "Type": "BadHabits.API.DTOs.CreateProductDto",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
         "IsRequired": true
       }
     ],
@@ -174,6 +189,7 @@
   },
   {
     "ContainingType": "BadHabits.API.Controllers.ProductsController",
+<<<<<<< HEAD
     "Method": "GetProductById",
     "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
@@ -186,6 +202,14 @@
         "IsRequired": true
       }
     ],
+=======
+    "Method": "GetAllProducts",
+    "RelativePath": "api/Products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     "ReturnTypes": []
   },
   {

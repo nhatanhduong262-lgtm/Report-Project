@@ -5,6 +5,9 @@
     "\\BadHabits.API\\BadHabits.API",
     "\\BadHabits.API\\BadHabits.API\\Controllers"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\BadHabits.API\\BadHabits.API\\Program.cs",
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
   "PreviewInSolutionExplorer": false
 }

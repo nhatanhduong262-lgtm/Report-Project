@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG NHẬP - TEAM C SỦI</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../Head_Footer.css">
+    <link rel="stylesheet" href="DangNhap.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+    </div>
+
+    <header class="badhabits-header">
+        <div class="header-container">
+            <a href="../TrangChu.html" class="logo-box">
+                <span class="logo-main">C SỦI</span>
+                <span class="logo-sub">OFFICIAL STORE</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="#">MOST POPULAR</a>
+                <a href="#">NEW ARRIVALS</a>
+                
+                <div class="dropdown">
+                    <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="catalogMenu">
+                        <a href="#">Đang tải danh mục...</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="#">Đang tải bộ sưu tập...</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#">INFORMATION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="../CAREER/CAREER.html">CAREER</a>
+                        <a href="../STORE/STORE.html">STORE</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="user-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+<<<<<<< HEAD:themcode/DangNhap/DangNhap.html
+                <a href="./DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
+                <a href="../LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
+=======
+                <a href="DangNhap.html">ĐĂNG NHẬP</a>
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3:fontend_DayDu/DangNhap/DangNhap.html
+                <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main-section">
+        <div class="login-container">
+            <h2 class="login-title">Team C Sủi Official Store</h2>
+
+            <button class="social-btn google-btn">
+                <i class="fa-brands fa-google"></i> Tiếp tục với Google
+            </button>
+            <button class="social-btn apple-btn">
+                <i class="fa-brands fa-apple"></i> Tiếp tục với Apple
+            </button>
+
+            <div class="divider">
+                <span>Hoặc</span>
+            </div>
+
+<<<<<<< HEAD:themcode/DangNhap/DangNhap.html
+            <form class="login-form" id="loginForm">
+                <input type="email" id="emailInput" placeholder="Nhập địa chỉ Email (VD: na@gmail.com)" required style="width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <input type="password" id="passwordInput" placeholder="Nhập mật khẩu" required style="margin-top: 15px; width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">Đăng Nhập</button>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 14px;">
+                    <a href="#" style="color: #666; text-decoration: underline;">Quên mật khẩu?</a>
+                    <a href="../DangKy/DangKy.html" style="color: #000; font-weight: bold; text-decoration: underline;">Chưa có tài khoản? Đăng ký ngay</a>
+                </div>
+=======
+            <form class="login-form">
+                <input type="text" id="emailInput" placeholder="Nhập email/số điện thoại" required>
+                
+                <div class="password-group">
+                    <input type="password" id="passwordField" placeholder="Mật khẩu" required>
+                    <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+                </div>
+
+                <button type="submit" id="btnLogin" class="submit-btn">Đăng nhập</button>
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3:fontend_DayDu/DangNhap/DangNhap.html
+            </form>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="../TrangChu.html" class="back-link">Quay lại và tiếp tục mua hàng</a>
+            </div>
+
+            <div class="login-footer">
+                Powered by <strong>Team C Sủi</strong>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom container">
+            <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+<<<<<<< HEAD:themcode/DangNhap/DangNhap.html
+    <script src="../global.js"></script>
+
+   <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+
+            const userEmail = document.getElementById('emailInput').value;
+            const userPass = document.getElementById('passwordInput').value;
+
+            try { 
+                const response = await fetch('https://localhost:7282/api/Auth/Login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: userEmail, password: userPass })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    let actualToken = result.data || result.token || (result.data && result.data.token);
+                    
+                    if (!actualToken || actualToken === "undefined" || actualToken === "[object Object]") {
+                        showToast("Lỗi: Không lấy được Token từ Server!", "error"); 
+                        return;
+                    }
+                    localStorage.setItem('jwtToken', actualToken); 
+                    
+                    // GỌI TOAST XANH LÁ CỰC XỊN
+                    showToast('Đăng nhập thành công! Đang chuyển hướng...', 'success');
+
+                    // --- BẮT ĐẦU GIẢI MÃ TOKEN ĐỂ PHÂN LUỒNG ---
+                    // Cho delay 1 giây để user kịp nhìn thấy Toast rồi mới nhảy trang
+                    setTimeout(() => {
+                        try { 
+                            const base64Url = actualToken.split('.')[1];
+                            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                            }).join(''));
+
+                            const tokenData = JSON.parse(jsonPayload);
+                            
+                            let userRole = "Customer"; 
+                            for (let key in tokenData) {
+                                if (key.toLowerCase().includes('role')) {
+                                    userRole = tokenData[key];
+                                }
+                            }
+
+                            // PHÂN LUỒNG CHUYỂN TRANG
+                            if (userRole === "Admin") {
+                                window.location.href = '../Admin/Admin.html'; 
+                            } else {
+                                window.location.href = '../TrangChu.html'; 
+                            }
+
+                        } catch(err) { 
+                            console.log("Không đọc được Role, về Trang chủ.");
+                            window.location.href = '../TrangChu.html';
+                        }
+                    }, 1000); 
+
+                } else {
+                    // Báo lỗi bằng Toast Đỏ
+                    showToast('Đăng nhập thất bại: ' + (result.message || 'Sai thông tin!'), 'error');
+                }
+            } catch (error) { 
+                console.error('Lỗi:', error);
+                // Lỗi server cũng hiện Toast Đỏ
+                showToast('Không thể kết nối đến máy chủ Backend!', 'error');
+            }
+        });
+    </script>
+    
+=======
+    <script>
+        // BẮT BUỘC TRÌNH DUYỆT ĐỢI: Vẽ xong HTML mới chạy code
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            console.log("Giao diện đã tải xong! Đang gắn các nút bấm...");
+
+            // --- PHẦN 1: TÍNH NĂNG MẮT NHÌN MẬT KHẨU ---
+            const btnMatKhau = document.getElementById('togglePassword');
+            const oNhapMatKhau = document.getElementById('passwordField');
+
+            if (btnMatKhau && oNhapMatKhau) {
+                btnMatKhau.addEventListener('click', function () {
+                    if (oNhapMatKhau.getAttribute('type') === 'password') {
+                        oNhapMatKhau.setAttribute('type', 'text');
+                        this.classList.replace('fa-eye-slash', 'fa-eye');
+                    } else {
+                        oNhapMatKhau.setAttribute('type', 'password');
+                        this.classList.replace('fa-eye', 'fa-eye-slash');
+                    }
+                });
+            } else {
+                console.error("Cảnh báo: Không tìm thấy nút Con Mắt (id='togglePassword')");
+            }
+
+            // --- PHẦN 2: TÍNH NĂNG GỌI API ĐĂNG NHẬP ---
+            const loginApiUrl = 'https://localhost:7282/api/Auth/login'; // Đổi 7282 nếu máy bạn chạy số khác
+            const emailInput = document.getElementById('emailInput');
+            const btnLogin = document.getElementById('btnLogin');
+
+            if (btnLogin && emailInput) {
+                btnLogin.addEventListener('click', async function(event) {
+                    event.preventDefault(); 
+
+                    const email = emailInput.value.trim();
+                    const password = oNhapMatKhau.value;
+
+                    if (!email || !password) {
+                        alert("Vui lòng nhập đầy đủ Email và Mật khẩu!");
+                        return;
+                    }
+
+                    try {
+                        const payload = {
+                            email: email,
+                            password: password
+                        };
+
+                        const response = await fetch(loginApiUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // Cất thẻ vào ví trình duyệt
+                            localStorage.setItem('jwtToken', result.token);
+                            alert("Đăng nhập thành công! Chào mừng bạn trở lại.");
+                            window.location.href = '../TrangChu.html';
+                        } else {
+                            alert("Đăng nhập thất bại: " + result.message);
+                        }
+                    } catch (error) {
+                        console.error("Lỗi kết nối:", error);
+                        alert("Không thể kết nối tới Server. Hãy đảm bảo Backend đang chạy!");
+                    }
+                });
+            } else {
+                console.error("Cảnh báo: Không tìm thấy Nút Đăng Nhập (id='btnLogin') hoặc Ô Email (id='emailInput')");
+            }
+        });
+    </script>
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3:fontend_DayDu/DangNhap/DangNhap.html
+</body>
+</html>

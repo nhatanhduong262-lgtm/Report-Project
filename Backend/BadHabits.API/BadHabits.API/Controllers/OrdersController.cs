@@ -93,6 +93,7 @@ namespace BadHabits.API.Controllers
                 orderId = newOrder.Id
             });
         }
+<<<<<<< HEAD
         // GET: api/orders/history
         [HttpGet("history")]
         public IActionResult GetMyOrderHistory()
@@ -139,5 +140,7 @@ namespace BadHabits.API.Controllers
             return Ok(new { success = true, data = result });
         }
 
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     }
 }

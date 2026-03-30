@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj": {}
   },
   "projects": {
@@ -12,16 +13,34 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\Backend\\BadHabits.API\\BadHabits.API\\obj\\",
+=======
+    "D:\\CSui\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj": {}
+  },
+  "projects": {
+    "D:\\CSui\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CSui\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj",
+        "projectName": "BadHabits.API",
+        "projectPath": "D:\\CSui\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\BadHabits.API.csproj",
+        "packagesPath": "C:\\Users\\LHUser\\.nuget\\packages\\",
+        "outputPath": "D:\\CSui\\Report-Project\\Backend\\BadHabits.API\\BadHabits.API\\obj\\",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\LHUser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
+<<<<<<< HEAD
           "net10.0"
         ],
         "sources": {
@@ -33,6 +52,17 @@
           "net10.0": {
             "framework": "net10.0",
             "targetAlias": "net10.0",
+=======
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             "projectReferences": {}
           }
         },
@@ -40,6 +70,7 @@
           "warnAsError": [
             "NU1605"
           ]
+<<<<<<< HEAD
         },
         "restoreAuditProperties": {
           "enableAudit": "true",
@@ -52,6 +83,13 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+=======
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
           "dependencies": {
             "BCrypt.Net-Next": {
               "target": "Package",
@@ -59,21 +97,37 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[10.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[10.0.5, )"
+=======
+              "version": "[6.0.36, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.36, )"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
+<<<<<<< HEAD
               "version": "[10.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.1.7, )"
+=======
+              "version": "[6.0.36, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             }
           },
           "imports": [
@@ -82,8 +136,12 @@
             "net47",
             "net471",
             "net472",
+<<<<<<< HEAD
             "net48",
             "net481"
+=======
+            "net48"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -95,6 +153,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
@@ -510,6 +569,9 @@
             "System.Xml.XPath": "(,4.3.32767]",
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
         }
       }
     }

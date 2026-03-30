@@ -88,17 +88,29 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/AddToCartRequest"
+=======
+                "$ref": "#/components/schemas/AddToCartDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/AddToCartRequest"
+=======
+                "$ref": "#/components/schemas/AddToCartDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/AddToCartRequest"
+=======
+                "$ref": "#/components/schemas/AddToCartDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             }
           }
@@ -122,6 +134,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Cart/update/{cartItemId}": {
       "put": {
         "tags": [
@@ -188,6 +201,8 @@
         }
       }
     },
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
     "/api/Orders/checkout": {
       "post": {
         "tags": [
@@ -219,6 +234,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/Orders/history": {
       "get": {
         "tags": [
@@ -252,6 +268,9 @@
           }
         }
       },
+=======
+    "/api/Products": {
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "post": {
         "tags": [
           "Products"
@@ -260,17 +279,29 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/Product"
+=======
+                "$ref": "#/components/schemas/CreateProductDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/Product"
+=======
+                "$ref": "#/components/schemas/CreateProductDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/Product"
+=======
+                "$ref": "#/components/schemas/CreateProductDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
               }
             }
           }
@@ -280,13 +311,18 @@
             "description": "OK"
           }
         }
+<<<<<<< HEAD
       }
     },
     "/api/Products/{id}": {
+=======
+      },
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "get": {
         "tags": [
           "Products"
         ],
+<<<<<<< HEAD
         "parameters": [
           {
             "name": "id",
@@ -298,6 +334,8 @@
             }
           }
         ],
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
         "responses": {
           "200": {
             "description": "OK"
@@ -347,6 +385,7 @@
   },
   "components": {
     "schemas": {
+<<<<<<< HEAD
       "AddToCartRequest": {
         "type": "object",
         "properties": {
@@ -358,6 +397,15 @@
             "type": "string",
             "nullable": true
           },
+=======
+      "AddToCartDto": {
+        "type": "object",
+        "properties": {
+          "variantId": {
+            "type": "integer",
+            "format": "int32"
+          },
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
           "quantity": {
             "type": "integer",
             "format": "int32"
@@ -365,6 +413,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "Category": {
         "type": "object",
         "properties": {
@@ -390,6 +439,8 @@
         },
         "additionalProperties": false
       },
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "CheckoutRequestDto": {
         "type": "object",
         "properties": {
@@ -404,6 +455,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "LoginRequestDto": {
         "type": "object",
         "properties": {
@@ -425,6 +477,11 @@
             "type": "integer",
             "format": "int32"
           },
+=======
+      "CreateProductDto": {
+        "type": "object",
+        "properties": {
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
           "name": {
             "type": "string",
             "nullable": true
@@ -445,6 +502,7 @@
             "type": "integer",
             "format": "int32"
           },
+<<<<<<< HEAD
           "category": {
             "$ref": "#/components/schemas/Category"
           },
@@ -452,12 +510,53 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Variant"
+=======
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateVariantDto"
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
+=======
+      "CreateVariantDto": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "stockQuantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginRequestDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "RegisterRequestDto": {
         "type": "object",
         "properties": {
@@ -476,6 +575,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "Variant": {
         "type": "object",
         "properties": {
@@ -505,6 +605,8 @@
         },
         "additionalProperties": false
       },
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "WeatherForecast": {
         "type": "object",
         "properties": {
@@ -538,9 +640,12 @@
       "name": "Cart"
     },
     {
+<<<<<<< HEAD
       "name": "Categories"
     },
     {
+=======
+>>>>>>> f48f68c0d002c86e7db8a5502522f12149ca16e3
       "name": "Orders"
     },
     {

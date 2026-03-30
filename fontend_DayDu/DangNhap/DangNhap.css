@@ -1,0 +1,136 @@
+/* =========================================================
+   CSS TRANG TRÍ RIÊNG CHO TRANG ĐĂNG NHẬP
+   ========================================================= */
+
+/* Nền xám bao quanh form */
+.login-main-section {
+    background-color: #f5f5f5; 
+    padding: 80px 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 70vh; 
+}
+
+/* Khung hộp đăng nhập màu trắng */
+.login-container {
+    background: #fff; 
+    width: 100%;
+    max-width: 450px; 
+    border-radius: 12px; 
+    padding: 40px; 
+    text-align: center; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+}
+
+.login-title { 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin-bottom: 25px; 
+    text-transform: none; 
+}
+
+/* NÚT BẤM GOOGLE & APPLE */
+.social-btn {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 12px; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    transition: 0.3s; 
+}
+.google-btn { background: #EBEBEB; color: #333; }
+.google-btn:hover { background: #D6D6D6; }
+
+.apple-btn { background: #111; color: #fff; }
+.apple-btn:hover { background: #333; }
+
+/* ĐƯỜNG KẺ "HOẶC" */
+.divider { 
+    display: flex; 
+    align-items: center; 
+    margin: 20px 0; 
+    color: #999; 
+}
+.divider::before, .divider::after { 
+    content: ''; 
+    flex: 1; 
+    border-bottom: 1px solid #EBEBEB; 
+}
+.divider span { padding: 0 15px; font-size: 12px; }
+
+/* CÁC Ô NHẬP LIỆU (INPUT) */
+.login-form input { 
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid #D6D6D6; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    outline: none; 
+    transition: 0.3s;
+}
+.login-form input:focus { border-color: #111; }
+
+/* CỤM MẬT KHẨU: Bao bọc ô mật khẩu và icon */
+.password-group {
+    position: relative; /* Gốc định vị cho icon con mắt */
+    width: 100%;
+    margin-top: 15px; 
+}
+
+/* Tùy chỉnh riêng cho icon con mắt */
+#togglePassword {
+    position: absolute; 
+    right: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    color: #999;
+}
+#togglePassword:hover { color: #333; }
+
+/* NÚT ĐĂNG NHẬP */
+.submit-btn { 
+    width: 100%; 
+    padding: 14px; 
+    background: #777; 
+    color: #fff; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    margin-top: 20px;
+    transition: 0.3s; 
+}
+.submit-btn:hover { background: #333; }
+
+/* Link quay lại */
+.back-link { 
+    display: inline-block; 
+    margin-top: 20px; 
+    font-size: 13px; 
+    color: #999; 
+    text-decoration: underline; 
+}
+.back-link:hover { color: #111; }
+
+/* Chữ bản quyền Form */
+.login-footer { 
+    margin-top: 30px; 
+    padding-top: 20px; 
+    border-top: 1px solid #f0f0f0; 
+    font-size: 12px; 
+    color: #999; 
+}
+/* Ép các ô nhập liệu không bị tự động in hoa */
+input {
+    text-transform: none !important;
+}
