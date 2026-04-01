@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG KÝ - TEAM C SỦI</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../Head_Footer.css">
+    <link rel="stylesheet" href="../DangNhap/DangNhap.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+    </div>
+
+     <header class="badhabits-header">
+        <div class="header-container">
+            
+            <a href="../TrangChu.html" class="logo-box">
+                <span class="logo-main">C SỦI</span>
+                <span class="logo-sub">OFFICIAL STORE</span>
+            </a>
+
+           <nav class="main-nav">
+                <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
+                <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
+                
+              <div class="dropdown">
+                    <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="catalogMenu">
+                        <a href="#">Đang tải danh mục...</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="#">Đang tải bộ sưu tập...</a>
+                    </div>
+                </div>
+                 <div class="dropdown">
+                    <a href="#">INFORMATION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="../CAREER/CAREER.html">CAREER</a>
+                        <a href="../STORE/STORE.html">STORE</a>
+                    </div>
+                </div>    
+            </nav>
+
+           <div class="user-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <a href="../DangNhap/DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
+                <a href="../LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
+                <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-main-section">
+        <div class="login-container">
+            <h2 class="login-title">TẠO TÀI KHOẢN MỚI</h2>
+
+            <form class="login-form" id="registerForm">
+                <input type="text" id="regFullName" placeholder="Nhập Họ và Tên của bạn" required style="width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <input type="email" id="regEmail" placeholder="Nhập địa chỉ Email" required style="margin-top: 15px; width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <input type="password" id="regPassword" placeholder="Nhập mật khẩu (Ít nhất 6 ký tự)" required style="margin-top: 15px; width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif;">
+                
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">ĐĂNG KÝ</button>
+                
+                <div style="margin-top: 15px; text-align: center; font-size: 14px;">
+                    <a href="../DangNhap/DangNhap.html" style="color: #000; font-weight: bold; text-decoration: underline;">Đã có tài khoản? Đăng nhập ngay</a>
+                </div>
+            </form>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="../TrangChu.html" class="back-link">Quay lại trang chủ</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom container">
+            <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="../global.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+
+            const fullName = document.getElementById('regFullName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            try {
+                // Gọi API Đăng ký y hệt trên Swagger
+                const response = await fetch('https://localhost:7282/api/Auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        fullName: fullName, 
+                        email: email, 
+                        password: password 
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    alert('Đăng ký thành công! Vui lòng tiến hành Đăng Nhập để mua sắm.');
+                    // Đá sang trang Đăng Nhập để khách tự nhập lại tài khoản (lấy JWT)
+                    window.location.href = '../DangNhap/DangNhap.html'; 
+                } else {
+                    alert('Đăng ký thất bại: ' + (result.message || 'Email này có thể đã được sử dụng!'));
+                }
+            } catch (error) {
+                console.error('Lỗi:', error);
+                alert('Không thể kết nối đến máy chủ Backend!');
+            }
+        });
+    </script>
+</body>
+</html>
