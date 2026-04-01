@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORE - TEAM C SỦI</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Head_Footer.css">
+
+    <link rel="stylesheet" href="./STORE.css">
+</head>
+
+<body>
+    <!-- ==============================================
+         PHẦN HEADER (ĐẦU TRANG)
+         ============================================== -->
+    <!-- Đây là khu vực header nằm trên cùng của trang web -->
+    <div class="announcement-bar">
+        MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 1.000.000Đ
+    </div>
+
+    <header class="badhabits-header">
+        <div class="header-container">
+            
+            <a href="../TrangChu.html" class="logo-box">
+                <span class="logo-main">C SỦI</span>
+                <span class="logo-sub">OFFICIAL STORE</span>
+            </a>
+
+           <nav class="main-nav">
+                <a href="../MOST_POPULAR/MOST_POPULAR.html">MOST POPULAR</a>
+                <a href="../NEW_ARRIVALS/NEW_ARRIVALS.html">NEW ARRIVALS</a>
+                
+              <div class="dropdown">
+                    <a href="#">CATALOG <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="catalogMenu">
+                        <a href="#">Đang tải danh mục...</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">COLLECTION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="#">Đang tải bộ sưu tập...</a>
+                    </div>
+                </div>
+                 <div class="dropdown">
+                    <a href="#">INFORMATION <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="collectionMenu">
+                        <a href="../CAREER/CAREER.html">CAREER</a>
+                        <a href="../STORE/STORE.html">STORE</a>
+                    </div>
+                </div>    
+            </nav>
+
+           <div class="user-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <a href="../DangNhap/DangNhap.html" id="authButton">ĐĂNG NHẬP</a>
+                <a href="../LichSuDonHang.html" id="historyButton">LỊCH SỬ</a>
+                <a href="../GioHang/GioHang.html">GIỎ HÀNG (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- THÂN HÀM MASTER: Vùng Giao Diện Phủ Tủ Chia Lệnh 60-40 Tỷ Lệ Toàn Màn Theo Đề Bài -->
+    <div class="full-layout" style="margin-top: 10px;margin-bottom: 10px; height: 600px;">
+
+        <!-- ==============================================
+             [BÊN TRÁI] KHUNG BẢN ĐỒ CHIẾM KHOẢN KÉO CỨNG 60%
+             ============================================== -->
+        <div class="map-section">
+            <!-- Iframe là cánh cổng nhúng website không gian ảo Map găm vào web của bạn. Mặc định mở tọa độ TRỤ SỞ VỊ TRÍ CÔNG TY đập mắt -->
+            <iframe id="main-map"
+                src="https://maps.google.com/maps?q=89%20Nguy%E1%BB%85n%20Tr%C3%A3i,%20Qu%E1%BA%ADn%201,%20TP.HCM&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- ==============================================
+             [BÊN PHẢI] DANH SÁCH CHI NHÁNH KÉO CỨNG 40% (GIỚI HẠN TỐI ĐA 6 )
+             ============================================== -->
+        <div class="stores-section">
+            <!-- Tựa điểm trang trí  -->
+            <h2 class="stores-title">ĐỊA CHỈ HỆ THỐNG</h2>
+
+            <div class="store-list">
+
+                <!-- CHI NHÁNH SỐ 1 (Đầu Bảng 1: Trụ sở Vị trí Công ty mẹ) -->
+                <div class="store-card">
+                    <!-- Hàng 1 mặc định: Tên hiển thị ngang -->
+                    <div class="store-name">TRỤ SỞ CÔNG TY (TP. HCM)</div>
+                    <!-- Hàng 2 mặc định: Địa chỉ phỉnh thực -->
+                    <div class="store-address">Số 89 Nguyễn Trãi, Phường Bến Thành, Quận 1, TP.HCM</div>
+                    <!-- Hàng 3 mặc định: Dãy sdt Cú Pháp (HOTLINE: DÃY-SỐ) -->
+                    <div class="store-phone">HOTLINE: +84 998877665</div>
+                    <!-- Hàng 4 mặc định: Nút bẫy lệnh kích hoạt đổi bản đồ 60% Map qua thuật toán JavaScript -->
+                    <!-- Lệnh móc rễ showBranchMap cõng theo param[2] là 1 câu địa chỉ text, còn [3] là 1 cái Url -->
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '89 Nguyễn Trãi, Quận 1, TP.HCM', 'https://goo.gl/maps/bandoHcmFake')">XEM
+                        BẢN ĐỒ</button>
+
+                    <!-- Khối DẠNG 2 MỞ RỘNG (Sẽ rơi xả lún tự động khi nhấn Button 'XEM BẢN ĐỒ' kế ở phía trên cùng thẻ chứa) -->
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 08:00 - 22:00 (Mở xuyên Lễ/Tết)</p>
+                        <!-- Nút dắt tay URL Link trực tiếp bắn phăng qua tab mới trang Google Map chuẩn chỉ -->
+                        <a class="direct-map-link" href="https://goo.gl/maps/bandoHcmFake" target="_blank">DẪN TRỰC TIẾP
+                            ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+                <!-- CHI NHÁNH SỐ 2 (ĐỒNG NAI: MẦM ĐỊA CHỈ DÁN TẮT TỚI CƠ SỞ 1 ĐẠI HỌC LẠC HỒNG) -->
+                <div class="store-card">
+                    <div class="store-name">BIÊN HÒA - ĐỒNG NAI</div>
+                    <!-- LƯU Ý SẮC LỆNH ĐỀ CƯƠNG BẮT BỘC: Tại đây dán ghi chú ghi đúng số nhà đường 10 Huỳnh Văn Nghệ, nhưng cấm ngặt tuỵệt ngôn không xả 2 từ  Lạc Hồng. 
+                         (Và Google Maps vẫn sẽ rụng khít báo định vị đỏ chét rập khuôn đúng vào chốt trường Lạc Hồng Uni khi tải Iframe). -->
+                    <div class="store-address">Số 10 Huỳnh Văn Nghệ, Phường Bửu Long, Biên Hòa, Đồng Nai</div>
+                    <div class="store-phone">HOTLINE: +84 987654321</div>
+                    <!-- Chữ "10 Huynh Văn Nghe..." này được nhồi mãng chuyển mã tự động dò thẳng chốt cửa LHU trên gg map! -->
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '10 Huỳnh Văn Nghệ, Bửu Long, Biên Hòa, Đồng Nai', 'https://maps.app.goo.gl/QZ8tX1zUQK')">XEM
+                        BẢN ĐỒ</button>
+
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 08:30 - 21:00 (Nghỉ Chủ Nhật)</p>
+                        <a class="direct-map-link" href="https://maps.app.goo.gl/QZ8tX1zUQK" target="_blank">DẪN TRỰC
+                            TIẾP ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+                <!-- CHI NHÁNH SỐ 3 (THỦ ĐÔ) -->
+                <div class="store-card">
+                    <div class="store-name">HÀ NỘI</div>
+                    <div class="store-address">Số 123 Đường Cầu Giấy, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội</div>
+                    <div class="store-phone">HOTLINE: +84 123456789</div>
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '123 Cầu Giấy, Hà Nội', 'https://goo.gl/maps/banDoHnFake')">XEM BẢN
+                        ĐỒ</button>
+
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 09:00 - 22:00 (Hàng Ngày)</p>
+                        <!-- target=_blank giúp nó nhảy qua tab trống khác chứ không tắt trang hiện tại -->
+                        <a class="direct-map-link" href="#" target="_blank">DẪN TRỰC TIẾP ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+                <!-- CHI NHÁNH SỐ 4 -->
+                <div class="store-card">
+                    <div class="store-name">ĐÀ NẴNG</div>
+                    <div class="store-address">Số 45 Lê Duẩn, Phường Hải Châu 1, Quận Hải Châu, Đà Nẵng</div>
+                    <div class="store-phone">HOTLINE: +84 112233445</div>
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '45 Lê Duẩn, Đà Nẵng', 'https://goo.gl/maps/bandoDNFake')">XEM BẢN
+                        ĐỒ</button>
+
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 08:00 - 22:00 (Hàng Ngày)</p>
+                        <a class="direct-map-link" href="#" target="_blank">DẪN TRỰC TIẾP ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+                <!-- CHI NHÁNH SỐ 5 -->
+                <div class="store-card">
+                    <div class="store-name">HẢI PHÒNG</div>
+                    <div class="store-address">Số 50 Tô Hiệu, Phường Trại Cau, Quận Lê Chân, Hải Phòng</div>
+                    <div class="store-phone">HOTLINE: +84 334455667</div>
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '50 Tô Hiệu, Hải Phòng', 'https://goo.gl/maps/somethingFake5')">XEM
+                        BẢN ĐỒ</button>
+
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 08:00 - 21:00 (Hàng Ngày)</p>
+                        <a class="direct-map-link" href="#" target="_blank">DẪN TRỰC TIẾP ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+                <!-- CHI NHÁNH SỐ 6 (CHỐT ĐUÔI RÀO TỐI ĐA 6 CÁI DO THỂ LỆ TẠO ĐỀ) -->
+                <div class="store-card">
+                    <div class="store-name">CẦN THƠ</div>
+                    <div class="store-address">Số 30 Đại Lộ Hòa Bình, Phường Tân An, Quận Ninh Kiều, Cần Thơ</div>
+                    <div class="store-phone">HOTLINE: +84 554433221</div>
+                    <button class="store-btn"
+                        onclick="showBranchMap(this, '30 Đại Lộ Hòa Bình, Ninh Kiều, Cần Thơ', 'https://goo.gl/maps/somethingFake6')">XEM
+                        BẢN ĐỒ</button>
+
+                    <div class="expanded-info">
+                        <p><strong>Hoạt động:</strong> 07:30 - 21:30 (Mỗi Ngày)</p>
+                        <a class="direct-map-link" href="#" target="_blank">DẪN TRỰC TIẾP ĐẾN GOOGLE MAPS</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         SỔ TAY JS: VẬN ĐỘNG TRỤC TỌA ĐỘ BẢN ĐỒ 60 & KHOẢN MỞ RỘNG 40
+         ============================================== -->
+    <script>
+        /**
+         * Hàm Động Cơ: Cập Nhật Vệ tinh Bản Đồ Bên Trái
+         * và Kéo rèm Mở Rộng Thẻ Cửa hàng Dạng 2 ở Bên Phải.
+         * 
+         * @param {Object} btnClickObj - Lính hứng trọn cú Click Nhấn của bạn truyền gốc object (Từ gọi là This)
+         * @param {String} stringQueryAddress - Dòng Test địa chỉ đường phố phỏng chế truyền vào để tra tọa độ
+         * @param {String} ggMapTabUrl - Đường dẫn Url truyền siêu tốc dành cho cái nút "Dẫn trực Map" bên trong nhánh nở 
+         */
+        function showBranchMap(btnClickObj, stringQueryAddress) {
+
+            /* [BƯỚC 1] - Xả tọa độ quét lên cục Map Iframe 60% rào màn hình BÊN TRÁI */
+            // Lệnh API mã hóa encodeURIComponent xoá sổ mọi kí tự có dẫu tiếng việt, khoảng trắng về mã hex API Maps  
+            const mapQuery = encodeURIComponent(stringQueryAddress);
+
+            // Tìm săn trúng thằng Frame Bảng Bản đồ Google khổng lồ #main-map
+            const mapFrame = document.getElementById('main-map');
+
+            // Xả lệnh nhồi link mới vào thớ thịt src= của Iframe với hậu tố '&q=Tên_Đường_Vừa_Bóc_Mã_Bên_Trên'
+            const embedUrl = `https://maps.google.com/maps?q=${mapQuery}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+            mapFrame.src = embedUrl;
+
+            // Luôn dùng đường dẫn Google Maps Search chính thống tránh số rút gọn bị lỗi Dynamic Link Not Found
+            const directUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
+
+            /* [BƯỚC 2] - Khống thế Dạng MỞ RỘNG (EXPANDED DẠNG 2) Ở Phía Phải */
+            // Gọi thầu dò quẹt ra sạch mớ toàn bộ 6 thằng gù .store-card đang giam giũ
+            const cacChiNhanh = document.querySelectorAll('.store-card');
+
+            // Dùng vòng for xối bay, tẩu táng bốc sạch danh hiệu hiệu ứng 'active-expand' để tụi nó rục đóng khóa ngăn cửa lại 
+            // Điều này nhằm trành tình trạng bạn click cả 6 cái thì nó tràng ngập 6 cái cửa mở bung xấu đi cục diện. Cứ click 1 - đóng 5 con lại
+            cacChiNhanh.forEach(function (card) {
+                card.classList.remove('active-expand');
+            });
+
+            // Gỡ tìm Căn Cước của thằng Nút vừa bị Click -> Truy ra cụ Cố tổ của cái nút chính là cái .store-card gần nó nhất mà nó lọt nằm (bằng lệnh closest)
+            const chiNhanhDuocChon = btnClickObj.closest('.store-card');
+
+            // Cho đính ngay miếng thiếp cờ 'active-expand' -> Nhờ Class này mà CSS bị nhả sập chốt và cục Dạng 2 bỗng chốc rớt cùi chỏ màn lòi ra block thông tin siêu link. 
+            chiNhanhDuocChon.classList.add('active-expand');
+
+            // Nạp siêu Url chính xác cho nút dẫn trực tiếp
+            const directLinkAnchor = chiNhanhDuocChon.querySelector('.direct-map-link');
+            directLinkAnchor.href = directUrl;
+        }
+
+        // Bật map link chính xác ngay khi load, trường hợp người dùng bấm trực tiếp chứ chưa bấm nút XEM BẢN ĐỒ
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.store-card').forEach(card => {
+                const addr = card.querySelector('.store-address').innerText.trim();
+                const link = card.querySelector('.direct-map-link');
+                if (addr && link) {
+                    link.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`;
+                }
+            });
+        });
+    </script>
+
+    <!-- ==============================================
+         PHẦN FOOTER (CHÂN TRANG WEB)
+         ============================================== -->
+    <!-- Đây là khu vực footer nằm ở dưới cùng của trang web -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>VỀ TEAM C SỦI</h3>
+                <p>Đồ án môn học Thiết kế Web.</p>
+                <p>Đại học Lạc Hồng (LHU)</p>
+                <p>TP. Biên Hòa, Đồng Nai.</p>
+            </div>
+            <div class="footer-col">
+                <h3>CHÍNH SÁCH</h3>
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Điều khoản dịch vụ</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h3>MẠNG XÃ HỘI</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>ĐĂNG KÝ NHẬN TIN</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">GỬI</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>COPYRIGHT © 2026 TEAM C SỦI - LHU. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+/* =========================================================
+   --- CSS DÀNH RIÊNG CHO TRANG ĐĂNG NHẬP --- 
+   ========================================================= */
+
+/* Tạo phần nền xám nhạt bao quanh form giống ảnh */
+.login-main-section {
+    background-color: #f5f5f5; 
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center; /* Canh giữa form theo chiều ngang */
+    align-items: center;
+    min-height: 60vh;
+}
+
+/* Khung form màu trắng */
+.login-container {
+    background: #fff;
+    width: 100%;
+    max-width: 450px; /* Độ rộng tối đa của hộp đăng nhập */
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Đổ bóng nhẹ */
+}
+
+/* Tiêu đề */
+.login-title { 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin-bottom: 25px; 
+    text-transform: none; /* Bỏ in hoa tự động */
+}
+
+/* Nút Google & Apple */
+.social-btn {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 12px; 
+    border: none; 
+    border-radius: 4px;
+    font-size: 14px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    transition: 0.3s; 
+    text-transform: none;
+}
+.google-btn { background: #EBEBEB; color: #333; }
+.google-btn:hover { background: #D6D6D6; }
+
+.apple-btn { background: #111; color: #fff; }
+.apple-btn:hover { background: #333; }
+
+/* Đường gạch ngang chữ "Hoặc" */
+.divider { 
+    display: flex; 
+    align-items: center; 
+    margin: 20px 0; 
+    color: #999; 
+    font-size: 12px; 
+    text-transform: none; 
+}
+.divider::before, .divider::after { 
+    content: ''; 
+    flex: 1; 
+    border-bottom: 1px solid #EBEBEB; 
+}
+.divider span { padding: 0 15px; }
+
+/* Ô nhập email/sđt */
+.login-form input { 
+    width: 100%; 
+    padding: 12px 15px; 
+    border: 1px solid #D6D6D6; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    margin-bottom: 15px; 
+    outline: none; 
+    text-transform: none; 
+}
+.login-form input:focus { border-color: #111; }
+
+/* Nút Tiếp Tục */
+.submit-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background: #777; 
+    color: #fff; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    text-transform: none; 
+}
+.submit-btn:hover { background: #555; }
+
+/* Nút Quay Lại */
+.back-link { 
+    display: inline-block; 
+    margin-top: 20px; 
+    font-size: 13px; 
+    color: #999; 
+    text-decoration: underline; 
+    text-transform: none; 
+}
+.back-link:hover { color: #111; }
+
+/* Footer của Form (Chữ Powered by...) */
+.login-footer { 
+    margin-top: 30px; 
+    padding-top: 20px; 
+    border-top: 1px solid #f0f0f0; 
+    font-size: 12px; 
+    color: #999; 
+    text-transform: none; 
+}
