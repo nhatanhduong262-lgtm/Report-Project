@@ -315,3 +315,22 @@
     color: #000; /* Đổi sang màu đen */
     border-bottom: 2px solid #000; /* Gạch chân đậm chất streetwear */
 }
+
+/* ==========================================
+   RESPONSIVE SẢN PHẨM & GIỎ HÀNG
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Lưới sản phẩm: bẻ xuống còn 2 áo 1 hàng */
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+    }
+    
+    /* Chữ trong sản phẩm nhỏ lại xíu cho đỡ bị tràn */
+    .product-info h3 { font-size: 14px; }
+    .product-info p { font-size: 13px; }
+    
+    /* Bảng giỏ hàng có thể cuộn ngang */
+    .cart-table-wrapper { overflow-x: auto; }
+    table { min-width: 600px; }
+}

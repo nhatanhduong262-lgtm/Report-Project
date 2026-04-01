@@ -54,6 +54,44 @@
         .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
         .btn-cancel { padding: 10px 20px; background: #eee; border: none; cursor: pointer; font-weight: bold; border-radius: 4px; }
         .btn-save { padding: 10px 20px; background: #000; color: #fff; border: none; cursor: pointer; font-weight: bold; border-radius: 4px; }
+        /* --- TOAST NOTIFICATION --- */
+        #toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
+        .toast { min-width: 250px; padding: 15px 20px; background: #fff; color: #333; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; font-weight: bold; transform: translateX(120%); transition: transform 0.3s ease-in-out; border-left: 5px solid; }
+        .toast.show { transform: translateX(0); }
+        .toast.success { border-left-color: #28a745; }
+        .toast.error { border-left-color: #dc3545; }
+        
+        /* --- MODAL XÁC NHẬN XÓA --- */
+        .confirm-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 10000; }
+        .confirm-box { background: #fff; padding: 30px; border-radius: 8px; width: 400px; text-align: center; }
+        .confirm-box i { font-size: 50px; color: #dc3545; margin-bottom: 15px; }
+        .confirm-box h3 { margin-bottom: 10px; }
+        .confirm-actions { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+
+        /* --- RESPONSIVE MOBILE CHO ADMIN --- */
+        @media screen and (max-width: 768px) {
+            body { flex-direction: column; overflow-y: auto; }
+            
+            /* Giấu Sidebar sang bên trái, khi nào bấm nút Menu mới hiện */
+            .sidebar { position: fixed; left: -260px; height: 100vh; z-index: 1000; transition: left 0.3s ease; }
+            .sidebar.show-mobile { left: 0; }
+            
+            /* Thêm màn hình mờ khi mở menu trên điện thoại */
+            .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 999; }
+            .mobile-overlay.show { display: block; }
+
+            .topbar { padding: 0 15px; }
+            .content-body { padding: 15px; }
+            
+            /* Các ô thông số (Tổng quan) xếp thành 1 cột dọc */
+            .stats-grid { grid-template-columns: 1fr; gap: 15px; }
+            
+            /* Bảng dữ liệu tự động thêm thanh cuộn ngang để không bị vỡ khung */
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+            
+            /* Hộp thoại thêm/sửa tràn viền điện thoại */
+            .modal-box { width: 95%; padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -188,8 +226,75 @@
             </form>
         </div>
     </div>
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-box">
+            <h2 style="margin-bottom: 20px; text-transform: uppercase;">Chỉnh Sửa Sản Phẩm</h2>
+            <form id="editProductForm">
+                <input type="hidden" id="editId"> <div class="form-group">
+                    <label>Tên Sản Phẩm *</label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div class="form-group">
+                    <label>Giá Bán (VNĐ) *</label>
+                    <input type="number" id="editPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>Danh Mục *</label>
+                    <select id="editCategory" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Đường Dẫn Ảnh (Image URL) *</label>
+                    <input type="text" id="editImg" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả ngắn</label>
+                    <input type="text" id="editDesc">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeEditModal()">Hủy Bỏ</button>
+                    <button type="submit" class="btn-save">Cập Nhật</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <div class="confirm-overlay" id="confirmDeleteModal">
+        <div class="confirm-box">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>Xác nhận xóa?</h3>
+            <p>Sản phẩm này sẽ bị xóa vĩnh viễn khỏi hệ thống.</p>
+            <div class="confirm-actions">
+                <button class="btn-cancel" onclick="closeConfirmModal()">Hủy Bỏ</button>
+                <button class="btn-save" style="background: #dc3545;" id="btnConfirmDelete">Xóa Ngay</button>
+            </div>
+        </div>
+    </div>
 
     <script>
+        // ==========================================
+        // HÀM HIỂN THỊ TOAST XỊN XÒ
+        // ==========================================
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            if (!container) return; // Tránh lỗi nếu chưa thêm thẻ HTML toast-container
+            
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icon = type === 'success' ? '<i class="fa-solid fa-circle-check" style="color:#28a745"></i>' : '<i class="fa-solid fa-circle-xmark" style="color:#dc3545"></i>';
+            toast.innerHTML = `${icon} <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            
+            // Tự động tắt sau 3 giây
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
         // 1. HÀM CHUYỂN TAB MƯỢT MÀ
         function switchTab(tabId, clickedElement) {
             // Tắt màu sáng ở tất cả menu
@@ -223,8 +328,8 @@
                                 <td style="color: #dc3545; font-weight: bold;">${p.price.toLocaleString('vi-VN')}đ</td>
                                 <td><span style="background:#28a745; color:#fff; padding:4px 8px; border-radius:4px; font-size:11px;">CÒN HÀNG</span></td>
                                 <td>
-                                    <button class="action-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button class="action-btn del-btn"><i class="fa-solid fa-trash"></i></button>
+                                    <button class="action-btn edit-btn" onclick="openEditModal(${p.id})"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="action-btn del-btn" onclick="deleteProduct(${p.id})"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                         `;
@@ -246,7 +351,7 @@
             }
         }
 
-        // 3. XỬ LÝ ĐÓNG MỞ MODAL
+        // 3. XỬ LÝ ĐÓNG MỞ MODAL THÊM SẢN PHẨM
         function openAddModal() {
             document.getElementById('addModal').style.display = 'flex';
         }
@@ -270,7 +375,6 @@
             };
 
             try {
-                // Đẩy xuống Backend (Giả sử bạn đã viết API POST /api/Products)
                 const response = await fetch('https://localhost:7282/api/Products', {
                     method: 'POST',
                     headers: { 
@@ -281,18 +385,123 @@
                 });
 
                 if (response.ok) {
-                    alert('Tuyệt vời! Đã thêm sản phẩm mới thành công.');
+                    showToast('Tuyệt vời! Đã thêm sản phẩm mới thành công.', 'success');
                     closeAddModal();
                     loadAdminData(); // Load lại bảng để thấy áo mới ngay lập tức
                 } else {
-                    alert('Lỗi: Bạn có quyền Admin chưa? Hoặc API POST bị lỗi.');
+                    showToast('Lỗi: Bạn có quyền Admin chưa? Hoặc API POST bị lỗi.', 'error');
                 }
             } catch (error) {
-                alert('Mất kết nối server!');
+                showToast('Mất kết nối server!', 'error');
+            }
+        });
+        
+        // ==========================================
+        // TÍNH NĂNG XÓA SẢN PHẨM (ĐÃ CHUYỂN SANG DÙNG MODAL)
+        // ==========================================
+        let deleteIdTemp = null; // Biến tạm lưu ID áo cần xóa
+
+        function deleteProduct(id) {
+            deleteIdTemp = id;
+            document.getElementById('confirmDeleteModal').style.display = 'flex'; // Hiện hộp thoại
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirmDeleteModal').style.display = 'none';
+            deleteIdTemp = null;
+        }
+
+        // Bắt sự kiện khi bấm nút "Xóa Ngay" trong hộp thoại
+        document.getElementById('btnConfirmDelete').addEventListener('click', async function() {
+            if (!deleteIdTemp) return;
+            
+            closeConfirmModal(); // Đóng hộp thoại trước
+            const token = localStorage.getItem('jwtToken');
+            
+            try {
+                const response = await fetch(`https://localhost:7282/api/Products/${deleteIdTemp}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (response.ok) {
+                    showToast('Đã xóa thành công!', 'success');
+                    loadAdminData(); // Load lại bảng ngay lập tức
+                } else {
+                    showToast('Lỗi: Không thể xóa sản phẩm này!', 'error');
+                }
+            } catch (error) {
+                showToast('Mất kết nối server!', 'error');
             }
         });
 
-        // Chạy ngay khi mở web
+        // ==========================================
+        // TÍNH NĂNG SỬA SẢN PHẨM
+        // ==========================================
+        function closeEditModal() { document.getElementById('editModal').style.display = 'none'; }
+
+        async function openEditModal(id) {
+            // 1. Lấy thông tin áo cũ từ Backend để điền sẵn vào Form
+            try {
+                const res = await fetch(`https://localhost:7282/api/Products`);
+                const result = await res.json();
+                const product = result.data.find(p => p.id === id); // Tìm đúng cái áo cần sửa
+
+                if (product) {
+                    document.getElementById('editId').value = product.id;
+                    document.getElementById('editName').value = product.name;
+                    document.getElementById('editPrice').value = product.price;
+                    document.getElementById('editImg').value = product.imageUrl;
+                    document.getElementById('editDesc').value = product.description || '';
+                    
+                    // Copy danh sách Danh mục từ Form Thêm sang Form Sửa
+                    document.getElementById('editCategory').innerHTML = document.getElementById('addCategory').innerHTML;
+                    document.getElementById('editCategory').value = product.categoryId;
+
+                    // Hiện hộp thoại lên
+                    document.getElementById('editModal').style.display = 'flex';
+                }
+            } catch (err) { 
+                showToast('Lỗi tải thông tin sản phẩm!', 'error'); 
+            }
+        }
+
+        // 2. Bắt sự kiện bấm nút "Cập Nhật"
+        document.getElementById('editProductForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const id = document.getElementById('editId').value;
+            const updatedProduct = {
+                id: parseInt(id),
+                name: document.getElementById('editName').value,
+                price: parseFloat(document.getElementById('editPrice').value),
+                categoryId: parseInt(document.getElementById('editCategory').value),
+                imageUrl: document.getElementById('editImg').value,
+                description: document.getElementById('editDesc').value
+            };
+
+            try {
+                const response = await fetch(`https://localhost:7282/api/Products/${id}`, {
+                    method: 'PUT',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('jwtToken')}` 
+                    },
+                    body: JSON.stringify(updatedProduct)
+                });
+
+                if (response.ok) {
+                    showToast('Cập nhật sản phẩm thành công!', 'success');
+                    closeEditModal();
+                    loadAdminData(); // Load lại bảng
+                } else {
+                    showToast('Lỗi: Không thể cập nhật!', 'error');
+                }
+            } catch (error) { 
+                showToast('Lỗi kết nối server!', 'error'); 
+            }
+        });
+
+        // Chạy hàm load dữ liệu ngay khi vừa vào trang Admin
         document.addEventListener('DOMContentLoaded', loadAdminData);
     </script>
 </body>
